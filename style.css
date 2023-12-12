@@ -1,0 +1,47 @@
+body{
+background-color: rgb(60, 60, 60);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+#rec-food-container{
+background-color: white;
+height: 300px;
+width: 300px;
+border: 3px solid purple;
+overflow: scroll;
+}
+#row{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.image{
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px; 
+    max-height: 300px;
+}
+.featured-item{
+  position: absolute;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 2;
+  top:250px;
+  left: 30px;
+  width: 100%;
+}
+.item-2{
+left: 330px;
+
+}
+.item-3{
+left: 630px;
+}
