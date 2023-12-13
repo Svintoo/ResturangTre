@@ -41,15 +41,25 @@ button.addEventListener("click", () => searchItem(item));
 
 function searchItem(item) {
   if (item.value !== "") {
-    document.getElementById("result").innerHTML = "";
+    document.getElementById("resultContainer").innerHTML = "";
     for (let p = 0; p < allItems.length; p++) {
       if (allItems[p].id.includes(item.value) == true) {
         let result = allItems[p].dsc;
-        document.getElementById("result").innerHTML += result;
-        document.getElementById("result").innerHTML += "<br>";
+        const resultLink = document.createElement("a");
+        resultLink.href = "#";
+        resultLink.textContent = result;
+        resultLink.style.textDecoration = "none";
+        resultLink.style.color = "white";
+        resultLink.addEventListener("click", () => itemDescription(result));
+        resultContainer.appendChild(resultLink);
       }
     }
   } else {
-    document.getElementById("result").innerHTML = "The field is empty!";
+    document.getElementById("resultContainer").innerHTML =
+      "The field is empty!";
   }
+}
+
+function itemDescription(item) {
+  console.log(item + " Clicked!");
 }

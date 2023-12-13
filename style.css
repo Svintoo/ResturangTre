@@ -45,9 +45,11 @@ left: 330px;
 .item-3{
 left: 630px;
 }
-#result{
-color: white;
+#resultContainer{
 font-size: large;
 background-color: black;
 position: absolute;
+max-width: 200px;
+max-height: 400px;
+overflow: scroll;
 }
