@@ -5,14 +5,14 @@ header {
 }
 
 .logo img {
-	width: 70px;
-	height: 50px;
+	width: 80px;
+	height: 70px;
 	align-items: center;
 }
 
 h1 {
 	color: orange;
-	font-size: 50px;
+	font-size: 38px;
 }
 
 ul {
@@ -22,8 +22,12 @@ ul {
 
 li a {
 	text-decoration: none;
-	color: white;
+	color: orange;
 	margin: 5px;
+	display: block;
+	line-height: 50px;
+	font-size: 1.125rem;
+	font-weight: 700;
 }
 
 .header-nav {
@@ -31,6 +35,75 @@ li a {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1em;
+	background-color: rgb(94, 94, 94);
+	color: black;
+	width: 50%;
+	height: 50%;
+	top: 0;
+	right: -100%;
+	z-index: 2;
+	padding: 10px;
+	font-size: 16px;
+	list-style: none;
+	position: fixed;
+	overflow: hidden;
+}
+
+.nav-list {
+	flex-direction: column;
+	list-style: none;
+	display: flex;
+	opacity: 1; /* Show links when menu is open */
+}
+
+.hidden-links {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* openbutton for slide in navbar */
+
+.hidden-open-btn {
+	display: block;
+}
+
+.openbtn {
+	background-color: rgb(97, 97, 97);
+	width: 40px;
+	height: 40px;
+	border-radius: 16px;
+	padding: 5px;
+	cursor: pointer;
+	color: #fff;
+	border: none;
+	margin: 20px;
+	position: fixed;
+	z-index: 1;
+	right: 10%;
+}
+
+.hidden-close-btn {
+	display: none;
+}
+
+.closebtn {
+	background-color: orange;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	color: rgb(94, 93, 93);
+	border: none;
+	top: 50px;
+	position: absolute;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.header-button {
+	height: 20px;
+	width: 20px;
+	display: flex;
+	justify-content: center;
 }
 
 body {

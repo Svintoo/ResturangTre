@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/46db20ce1c.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
     <title>Resturangen</title>
 </head>
     <main>
@@ -11,9 +13,16 @@
             <section class="logo-container">
                 <h1 class="logo"><img src="logo6.png" alt="logo">TAVERNA</h1>
             </section>
+            <button class="header-button"><i id="header-img" class="fa-solid fa-basket-shopping"></i></button>
+            <button type="button" id="openbtn" class="openbtn hidden-open-btn"><i class="fa-solid fa-bars"></i></button>
             <div class="header-nav">
+                
+                <a id="closebtn" class="closebtn hidden-close-btn">X</a>
+                
+                
                 <nav class="meny-toggle" id="meny-toggle">
-                    <ul class="nav-list">
+
+                    <ul class="nav-list hidden-links">
                         <li>
                             <a href="#">Meny</a>
                         </li>
@@ -21,15 +30,17 @@
                             <a href="#">Om oss</a>
                         </li>
                         <li>
-                            <a href="#">Kundkorg</a>
+                            <a href="#">Hitta hit</a>
                         </li>
                     </ul>
                 </nav>
+                
             </div>
+            
         </header>
     <body>
         <div id="rec-food-container">
-        <script src="app.js"></script>
+        
         <article id="row">
             <a href="" class="featured-item">Food item 1</a>
             <img src="/img/mat1.jpg" alt="" class="image">
