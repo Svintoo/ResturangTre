@@ -48,8 +48,21 @@ left: 630px;
 #resultContainer{
 font-size: large;
 background-color: black;
+color: white;
 position: absolute;
 max-width: 200px;
 max-height: 400px;
 overflow: scroll;
+border-radius: 5px;
+padding: 7px;
+}
+
+.productInfoHeader{
+  font-size: xx-large;
+  color: white;
+}
+.productInfoPrice{
+  font-size: large;
+  color: white;
+
 }
