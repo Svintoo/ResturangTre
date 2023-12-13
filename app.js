@@ -3,6 +3,23 @@ import db from "./db.js";
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
+const allItems = [
+  ...db.bbqs,
+  ...db["best-foods"],
+  ...db.breads,
+  ...db.burgers,
+  ...db.chocolates,
+  ...db.desserts,
+  ...db.drinks,
+  ...db["fried-chicken"],
+  ...db["ice-cream"],
+  ...db.pizzas,
+  ...db.porks,
+  ...db.sandwiches,
+  ...db.sausages,
+  ...db.steaks,
+  ...db["our-foods"],
+];
 let i = 1;
 
 setInterval(function () {
@@ -14,44 +31,25 @@ setInterval(function () {
 function slide(slider) {
   if (i <= 2) {
     slider.scrollLeft += 300;
-    //console.log(i);
   } else {
     slider.scrollLeft -= 600;
     i = 0;
-    //console.log("reset");
   }
 }
 
 button.addEventListener("click", () => searchItem(item));
-//console.log(db.bbqs[0]);
 
 function searchItem(item) {
   if (item.value !== "") {
     document.getElementById("result").innerHTML = "";
-    //console.log(item.value);
-    for (let p = 0; p < db.bbqs.length; p++) {
-      if (db.bbqs[p].id.includes(item.value) == true) {
-        let result = db.bbqs[p].id;
-        let resultPretty = removeHyphen(result);
-        document.getElementById("result").innerHTML += resultPretty;
+    for (let p = 0; p < allItems.length; p++) {
+      if (allItems[p].id.includes(item.value) == true) {
+        let result = allItems[p].dsc;
+        document.getElementById("result").innerHTML += result;
         document.getElementById("result").innerHTML += "<br>";
       }
     }
   } else {
     document.getElementById("result").innerHTML = "The field is empty!";
   }
-}
-
-function removeHyphen(word) {
-  let newWord = "";
-  newWord += word[0].toUpperCase();
-
-  for (let p = 1; p < word.length; p++) {
-    if (word[p] == "-") {
-      newWord += " ";
-    } else {
-      newWord += word[p];
-    }
-  }
-  return newWord;
 }

@@ -48,5 +48,6 @@ left: 630px;
 #result{
 color: white;
 font-size: large;
-
+background-color: black;
+position: absolute;
 }
