@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    
     <title>Resturangen</title>
 </head>
 <body>
     <div id="rec-food-container">
-       <script src="app.js"></script>
+       <script type="module" src="app.js"></script>
        <article id="row">
         <a href="" class="featured-item">Food item 1</a>
         <img src="/img/mat1.jpg" alt="" class="image">
@@ -16,10 +16,16 @@
         <img src="/img/mat2.jpg" alt="" class="image">
         <a href="" class="featured-item item-3">Food item 3</a>
         <img src="/img/mat3.jpg" alt="" class="image">
-        
        </article>
      
     </div>
+<form action="post">
+    <input type="text" id="txtField">
+    <input type="button" id="searchBtn" value="Search">
+    <div id="result"></div>
+</form>
 
+<link rel="stylesheet" href="style.css">
+<script type="module" src="db.js"></script>
 </body>
 </html>
