@@ -1,21 +1,21 @@
 const slider = document.getElementById("rec-food-container");
 let i = 1;
-const nav = document.querySelector(".header-nav");
-const openBtn = document.querySelector(".openbtn");
-const closeBtn = document.querySelector(".closebtn");
-const hiddenLinks = document.querySelector(".hidden-links");
+// const nav = document.querySelector(".header-nav");
+// const openBtn = document.querySelector(".openbtn");
+// const closeBtn = document.querySelector(".closebtn");
+// const hiddenLinks = document.querySelector(".hidden-links");
 
-openBtn.addEventListener("click", () => {
-	nav.style.right = "0";
-	hiddenLinks.style.opacity = 1; // Show links when menu opens
-	closeBtn.classList.remove("hidden-close-btn");
-});
+// openBtn.addEventListener("click", () => {
+// 	nav.style.right = "0";
+// 	hiddenLinks.style.opacity = 1; // Show links when menu opens
+// 	closeBtn.classList.remove("hidden-close-btn");
+// });
 
-closeBtn.addEventListener("click", () => {
-	nav.style.right = "-100%";
-	hiddenLinks.style.opacity = 0; // Hide links when menu closes
-	closeBtn.classList.add("hidden-close-btn");
-});
+// closeBtn.addEventListener("click", () => {
+// 	nav.style.right = "-100%";
+// 	hiddenLinks.style.opacity = 0; // Hide links when menu closes
+// 	closeBtn.classList.add("hidden-close-btn");
+// });
 
 setInterval(function () {
 	slide(slider);

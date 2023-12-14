@@ -4,27 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/46db20ce1c.js" crossorigin="anonymous"></script>
     <script src="app.js" defer></script>
-    <title>Resturangen</title>
+    <title>TAVERNA</title>
 </head>
     <main>
         <header>
             <section class="logo-container">
                 <h1 class="logo"><img src="logo6.png" alt="logo">TAVERNA</h1>
             </section>
-            <section class="btn-container">
-                <button class="header-button"><i id="header-img" class="fa-solid fa-basket-shopping"></i></button>
-                <button type="button" id="openbtn" class="openbtn hidden-open-btn"><i class="fa-solid fa-bars"></i></button>
+            <section class="shopping-btn">
+                <i class="fa-solid fa-basket-shopping"></i>
+                
             </section>
             <div class="header-nav">
                 
-                <a id="closebtn" class="closebtn hidden-close-btn">X</a>
-                
-                
-                <nav class="meny-toggle" id="meny-toggle">
+                <nav>
 
-                    <ul class="nav-list hidden-links">
+                    <ul class="menu" id="menu">
                         <li>
                             <hr>
                             <a href="#">Meny</a>
@@ -36,9 +34,13 @@
                         <li>
                             <hr>
                             <a href="#">Hitta hit</a>
+                            <a class="close" href="#"><span class="material-icons">close</span></a>
                             <hr>
                         </li>
+                        
                     </ul>
+                    
+                    <a class="hamburger" href="#menu"><span class="material-icons">menu</span></a>
                 </nav>
                 
             </div>
