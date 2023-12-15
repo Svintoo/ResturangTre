@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturangen</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/46db20ce1c.js" crossorigin="anonymous"></script>
-   
     <title>TAVERNA</title>
 </head>
 
@@ -49,7 +49,6 @@
         </header>
     <body>
         <div id="rec-food-container">
-        
         <article id="row">
             <a href="" class="featured-item">Food item 1</a>
             <img src="/img/mat1.jpg" alt="" class="image">
@@ -57,16 +56,17 @@
             <img src="/img/mat2.jpg" alt="" class="image">
             <a href="" class="featured-item item-3">Food item 3</a>
             <img src="/img/mat3.jpg" alt="" class="image">
+            <script type="module" src="app.js"></script>
             
         </article>        
         </div>
 
     <div id="search-container">
-        <form id="search-form">
-            <label for="search-input" class="visually-hidden">Sök efter din mat här:</label>
-            <input type="text" id="search-input" name="search" placeholder="Sök efter din mat här">
-            <button type="submit">Sök</button>
-        </form>
+    <form action="post">
+    <input type="text" id="txtField">
+    <input type="button" id="searchBtn" value="Search">
+    <div id="resultContainer"></div>
+    </form>
     </div>
     
 <div id="image-grid">
@@ -76,6 +76,7 @@
     <img src="4.jpg" alt="Bild 4" class="grid-image">
 </div>
 
+<script type="module" src="db.js"></script>
 </body>
       
     </main>

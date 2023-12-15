@@ -142,53 +142,26 @@ body {
 	left: 630px;
 }
 
-#rec-food-container {
-  background-color: white;
-  height: 300px;
-  width: 300px;
-  margin-top: 70px;
-  border: 3px solid purple;
-  overflow: scroll;
+#resultContainer{
+font-size: large;
+background-color: black;
+color: white;
+position: absolute;
+max-width: 200px;
+max-height: 400px;
+overflow: scroll;
+border-radius: 5px;
+padding: 7px;
 }
 
-#row {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  flex-wrap: row;
-}
-
-.image {
-  min-width: 300px;
-  min-height: 300px;
-  max-width: 300px;
-  max-height: 300px;
-}
-
-.featured-item {
-  position: absolute;
-  color: black;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  z-index: 2;
-  top: 250px;
-  left: 30px;
-  width: 100%;
-}
-
-.item-2 {
-  left: 330px;
-
-}
-
-.item-3 {
-  left: 630px;
-}
-
-#search-container {
+.productInfoHeader{
+  font-size: xx-large;
   color: white;
-  margin-top: 20px;
+}
+.productInfoPrice{
+  font-size: large;
+  color: white;
+
 }
 
 #image-grid {
@@ -214,4 +187,3 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
