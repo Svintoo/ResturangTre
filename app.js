@@ -3,6 +3,7 @@ import db from "./db.js";
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
+const nav = document.querySelector(".header-nav");
 const allItems = [
   ...db.bbqs,
   ...db["best-foods"],
@@ -22,20 +23,16 @@ const allItems = [
 ];
 let i = 1;
 
-setInterval(function () {
-  slide(slider);
 
-  i++;
+
+
+setInterval(function () {
+	slide(slider);
+
+	i++;
 }, 3000);
 
-function slide(slider) {
-  if (i <= 2) {
-    slider.scrollLeft += 300;
-  } else {
-    slider.scrollLeft -= 600;
-    i = 0;
-  }
-}
+
 
 button.addEventListener("click", () => searchItem(item));
 
@@ -93,3 +90,21 @@ function itemDescription(item) {
   itemDescPrice.innerHTML += ":-SEK";
   itemDesc.appendChild(itemDescPrice);
 }
+
+function slide(slider) {
+  if (i <= 2) {
+    slider.scrollLeft += 300;
+  } else {
+    slider.scrollLeft -= 600;
+    i = 0;
+  }
+=======
+	if (i <= 2) {
+		slider.scrollLeft += 300;
+		console.log(i);
+	} else {
+		slider.scrollLeft -= 600;
+		i = 0;
+		console.log("reset");
+	}
+
