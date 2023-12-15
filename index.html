@@ -4,26 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Resturangen</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/46db20ce1c.js" crossorigin="anonymous"></script>
+   
+    <title>TAVERNA</title>
 </head>
-<body>
 
-    <div id="header">
-        <img src="taverna.png" alt="logga" style="width: 70%; height: auto;">
-    </div>
+    <main>
+        <header>
+            <section class="logo-container">
+                <h1 class="logo"><img src="logo6.png" alt="logo">TAVERNA</h1>
+            </section>
+            <section class="shopping-btn">
+                <i class="fa-solid fa-basket-shopping"></i>
+                
+            </section>
+            <div class="header-nav">
+                
+                <nav>
 
-    <div id="rec-food-container">
-    <script src="app.js"></script>
-        <article id="row">
-        <a href="" class="featured-item">Food item 1</a>
-        <img src="/img/mat1.jpg" alt="" class="image">
-        <a href="" class="featured-item item-2">Food item 2</a>
-        <img src="/img/mat2.jpg" alt="" class="image">
-        <a href="" class="featured-item item-3">Food item 3</a>
-        <img src="/img/mat3.jpg" alt="" class="image">
+                    <ul class="menu" id="menu">
+                        <li>
+                            <hr>
+                            <a href="#">Meny</a>
+                        </li>
+                        <li>
+                            <hr>
+                            <a href="#">Om oss</a>
+                        </li>
+                        <li>
+                            <hr>
+                            <a href="#">Hitta hit</a>
+                            <a class="close" href="#"><span class="material-icons">close</span></a>
+                            <hr>
+                        </li>
+                        
+                    </ul>
+                    
+                    <a class="hamburger" href="#menu"><span class="material-icons">menu</span></a>
+                </nav>
+                
+            </div>
+            
+        </header>
+    <body>
+        <div id="rec-food-container">
         
-        </article>
-    </div>
+        <article id="row">
+            <a href="" class="featured-item">Food item 1</a>
+            <img src="/img/mat1.jpg" alt="" class="image">
+            <a href="" class="featured-item item-2">Food item 2</a>
+            <img src="/img/mat2.jpg" alt="" class="image">
+            <a href="" class="featured-item item-3">Food item 3</a>
+            <img src="/img/mat3.jpg" alt="" class="image">
+            
+        </article>        
+        </div>
 
     <div id="search-container">
         <form id="search-form">
@@ -41,4 +77,7 @@
 </div>
 
 </body>
+      
+    </main>
+
 </html>
