@@ -7,9 +7,14 @@
     <title>Resturangen</title>
 </head>
 <body>
+
+    <div id="header">
+        <img src="taverna.png" alt="logga" style="width: 70%; height: auto;">
+    </div>
+
     <div id="rec-food-container">
-       <script src="app.js"></script>
-       <article id="row">
+    <script src="app.js"></script>
+        <article id="row">
         <a href="" class="featured-item">Food item 1</a>
         <img src="/img/mat1.jpg" alt="" class="image">
         <a href="" class="featured-item item-2">Food item 2</a>
@@ -17,9 +22,23 @@
         <a href="" class="featured-item item-3">Food item 3</a>
         <img src="/img/mat3.jpg" alt="" class="image">
         
-       </article>
-     
+        </article>
     </div>
+
+    <div id="search-container">
+        <form id="search-form">
+            <label for="search-input" class="visually-hidden">Sök efter din mat här:</label>
+            <input type="text" id="search-input" name="search" placeholder="Sök efter din mat här">
+            <button type="submit">Sök</button>
+        </form>
+    </div>
+    
+<div id="image-grid">
+    <img src="1.jpg" alt="Bild 1" class="grid-image">
+    <img src="2.jpg" alt="Bild 2" class="grid-image">
+    <img src="3.jpg" alt="Bild 3" class="grid-image">
+    <img src="4.jpg" alt="Bild 4" class="grid-image">
+</div>
 
 </body>
 </html>
