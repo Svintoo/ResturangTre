@@ -98,7 +98,7 @@ function slide(slider) {
     slider.scrollLeft -= 600;
     i = 0;
   }
-=======
+
 	if (i <= 2) {
 		slider.scrollLeft += 300;
 		console.log(i);
@@ -107,4 +107,4 @@ function slide(slider) {
 		i = 0;
 		console.log("reset");
 	}
-
+}
