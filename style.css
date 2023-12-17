@@ -205,3 +205,22 @@ li a {
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+
+footer {
+	background-color: rgb(60, 60, 60);
+	width: auto;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 30px;
+	color: white;
+}
+
+.img-footer-container img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
+}
