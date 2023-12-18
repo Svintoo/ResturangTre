@@ -135,6 +135,13 @@ li a {
 ::-webkit-scrollbar {
 	display: none;
 }
+.featured-area{
+display: flex;
+flex-direction: row;
+width: 600px;
+height: 300px;
+
+}
 
 #rec-food-container {
 	background-color: white;
@@ -142,13 +149,24 @@ li a {
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
-	margin-top: 3rem;
+	
 }
+#description{
+	height: 300px;
+	width: 300px;
+	background-color: rgb(131, 131, 131);
+	}
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
+#search-container{
+height: 100px;
+margin-left: 375px;
+margin-bottom: -115px;
+}
+
 
 .image {
 	min-width: 300px;
@@ -199,13 +217,16 @@ li a {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-top: 20px;
+	margin-top: 50px;
+	max-width: 602px;
+	padding: 1px;
+
 }
 
 .grid-image {
 	width: 300px;
 	height: 300px;
-	border: 2px solid goldenrod;
+	border: 2px solid rgb(255, 0, 0); 
 }
 
 .visually-hidden {
