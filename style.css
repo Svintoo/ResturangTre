@@ -127,7 +127,7 @@ li a {
 	background-color: white;
 	height: 300px;
 	width: 300px;
-	border: 3px solid purple;
+	border: 3px solid goldenrod;
 	overflow: scroll;
 	margin-top: 3rem;
 }
@@ -190,9 +190,9 @@ li a {
 }
 
 .grid-image {
-	width: 200px;
-	height: auto;
-	border: 2px solid purple;
+	width: 300px;
+	height: 300px;
+	border: 2px solid goldenrod;
 }
 
 .visually-hidden {
