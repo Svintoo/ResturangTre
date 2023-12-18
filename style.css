@@ -211,7 +211,6 @@ li a {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 50px;
-	border: solid goldenrod;
 	justify-content: space-around;
 }
 
