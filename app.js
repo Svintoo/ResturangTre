@@ -23,6 +23,8 @@ const allItems = [
 ];
 let i = 1;
 let itemDesc = null;
+let toggleSearch = false;
+let toggleResult = false;
 
 setInterval(function () {
   slide(slider);
@@ -35,6 +37,7 @@ button.addEventListener("click", () => {
 });
 
 function searchItem(item) {
+  toggleResultContainer();
   if (item.value !== "") {
     let found = false;
     document.getElementById("resultContainer").innerHTML = "";
@@ -49,7 +52,7 @@ function searchItem(item) {
         resultLink.style.color = "white";
         resultLink.addEventListener("click", () => {
           itemDescription(allItems[p]);
-          removeItemDesc();
+          toggleResultContainer();
         });
         resultContainer.appendChild(resultLink);
         resultContainer.appendChild(document.createElement("br"));
@@ -69,17 +72,25 @@ function searchItem(item) {
 }
 
 function itemDescription(item) {
-  removeItemDesc();
   console.log(item.dsc + " Clicked!");
+  let productScreen = document.getElementById("image-grid");
+
+  let clickField = document.createElement("div");
+  clickField.id = "clickRemove";
+  clickField.addEventListener("click", () => {
+    removeProductDesc();
+  });
+  productScreen.appendChild(clickField);
 
   itemDesc = document.createElement("div");
   itemDesc.className = "productInfo";
-  itemDesc.style.height = "300px";
-  itemDesc.style.width = "300px";
+  itemDesc.id = "productId";
+  itemDesc.style.height = "600px";
+  itemDesc.style.width = "600px";
   console.log(item.img);
   itemDesc.style.backgroundImage = `url(${item.img})`;
   itemDesc.style.backgroundSize = "cover";
-  document.body.appendChild(itemDesc);
+  productScreen.appendChild(itemDesc);
 
   let itemDescH2 = document.createElement("h2");
   itemDescH2.className = "productDescH2";
@@ -94,7 +105,10 @@ function itemDescription(item) {
 
   let itemAddToCart = document.createElement("button");
   itemAddToCart.innerHTML = "Add to cart";
-  itemAddToCart.className = "addToCart";
+  itemAddToCart.id = "addToCart";
+  itemAddToCart.addEventListener("click", () => {
+    alert("pressed!");
+  });
   itemDesc.appendChild(itemAddToCart);
 }
 
@@ -105,19 +119,25 @@ function slide(slider) {
     slider.scrollLeft -= 600;
     i = 0;
   }
-
-  if (i <= 2) {
-    slider.scrollLeft += 300;
-    console.log(i);
+}
+function toggleResultContainer() {
+  let resultContainer = document.getElementById("resultContainer");
+  if (toggleSearch == false) {
+    resultContainer.classList.remove("visually-hidden");
+    toggleSearch = true;
   } else {
-    slider.scrollLeft -= 600;
-    i = 0;
-    console.log("reset");
+    resultContainer.classList.add("visually-hidden");
+    toggleSearch = false;
   }
 }
-function removeItemDesc(itemDesc) {
-  if (itemDesc) {
-    body.removeChild(itemDesc);
-    itemDesc = null;
-  }
+function removeProductDesc() {
+  console.log("field clicked!");
+  let itemDesc = document.getElementById("productId");
+  let removeField = document.getElementById("clickRemove");
+  let productScreen = document.getElementById("image-grid");
+
+  productScreen.removeChild(itemDesc);
+  productScreen.removeChild(removeField);
+
+  console.log(toggleResult);
 }

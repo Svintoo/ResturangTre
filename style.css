@@ -1,24 +1,62 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	background-color: rgb(60, 60, 60);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
 header {
+	top: 0;
 	display: flex;
 	flex-direction: row;
-	width: 100%;
+	justify-content: center;
+	width: 100vw;
 	height: 18%;
-	position: fixed;
+	position: sticky;
 	z-index: 2;
 	background-color: rgba(60, 60, 60, 0.507);
 }
 
-.logo img {
+.logo-container {
+	width: 200px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 85px;
+	margin-top: 4px;
+}
+
+.logo-container img {
 	width: 80px;
 	height: 70px;
 	opacity: 0.7;
 	margin-top: 5px;
+	padding: 6px;
 }
 
 h1 {
 	color: white;
 	font-size: 28px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin-top: 6px;
+	margin-left: 4px;
+}
+
+.logo-sub-text {
+	color: goldenrod;
+	font-size: 10px;
+	padding: 2px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	margin-left: 4px;
 }
 
 ul {
@@ -36,6 +74,16 @@ li a {
 	font-weight: 700;
 }
 
+.shopping-btn {
+	background-color: grey;
+	height: 27px;
+	width: 25px;
+	border-radius: 7px;
+	margin: 5px;
+	padding: 4px;
+	margin-top: 10px;
+}
+
 .hamburger {
 	position: fixed;
 	/* a large z-index puts the ham button above the rest of the page*/
@@ -43,9 +91,9 @@ li a {
 	background-color: grey;
 	border: none;
 	cursor: pointer;
-	top: 1.3rem;
-	right: 3rem;
+	margin: 5px;
 	border-radius: 5px;
+	margin-top: 10px;
 }
 
 .menu {
@@ -84,39 +132,42 @@ li a {
 	transform: translateX(0);
 }
 
-.shopping-btn {
-	height: 30px;
-	width: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 5px;
-}
-
-body {
-	background-color: rgb(60, 60, 60);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 ::-webkit-scrollbar {
 	display: none;
+}
+.featured-area{
+display: flex;
+flex-direction: row;
+width: 600px;
+height: 300px;
+
 }
 
 #rec-food-container {
 	background-color: white;
 	height: 300px;
 	width: 300px;
-	border: 3px solid purple;
+	border: 3px solid goldenrod;
 	overflow: scroll;
-	margin-top: 40%;
+	
 }
+#description{
+	height: 300px;
+	width: 300px;
+	background-color: rgb(131, 131, 131);
+	}
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
+#search-container{
+height: 100px;
+margin-left: 375px;
+margin-bottom: -115px;
+z-index: 5;
+}
+
 
 .image {
 	min-width: 300px;
@@ -142,20 +193,20 @@ body {
 	left: 630px;
 }
 
-#resultContainer{
-font-size: large;
-background-color: black;
-color: white;
-position: absolute;
-max-width: 200px;
-max-height: 400px;
-overflow: scroll;
-border-radius: 5px;
-padding: 7px;
+#resultContainer {
+	font-size: large;
+	background-color: black;
+	color: white;
+	position: absolute;
+	max-width: 200px;
+	max-height: 400px;
+	overflow: scroll;
+	border-radius: 5px;
+	padding: 7px;
 }
 
 .productInfo{
-  
+  position: absolute;
 
 }
 .productDescH2{
@@ -163,23 +214,33 @@ padding: 7px;
   color: white;
   text-wrap:wrap;
 }
-.productInfoPrice{
-  font-size: large;
-  color: white;
-
+.productInfoPrice {
+	font-size: large;
+	color: white;
+}
+#clickRemove{
+	position: fixed;
+    left: -300px;
+	top: -500px;
+	width: 2000px;
+	height: 2000px;
+	background-color: rgba(70, 144, 210, 0.579);
 }
 
 #image-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	max-width: 602px;
+	padding: 1px;
+
 }
 
 .grid-image {
-  width: 200px;
-  height: auto;
-  border: 2px solid purple;
+	width: 300px;
+	height: 300px;
+	border: 2px solid rgb(255, 0, 0); 
 }
 
 .visually-hidden {
@@ -192,7 +253,6 @@ padding: 7px;
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-.addToCart{
+#addToCart{
 border-radius: 5px;
-
 }
