@@ -148,6 +148,7 @@ li a {
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
+
 }
 #description {
 	height: 300px;
@@ -235,7 +236,7 @@ li a {
 .grid-image {
 	width: 300px;
 	height: 300px;
-	border: 2px solid rgb(255, 0, 0);
+	border: 2px solid goldenrod;
 }
 
 .visually-hidden {
@@ -250,4 +251,55 @@ li a {
 }
 #addToCart {
 	border-radius: 5px;
+}
+
+footer {
+	background-color: rgb(60, 60, 60);
+	width: auto;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 30px;
+	color: white;
+}
+
+.img-footer-container img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+
+.menu-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	justify-content: space-around;
+}
+
+.menu-container article {
+	flex: 0 0 calc(50% - 20px);
+	color: white;
+	margin: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 20px;
+	background-color: grey;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.menu-container .drinks-menu,
+.menu-container .burgers-menu,
+.menu-container .BBQ-menu,
+.menu-container .sandwiches-menu,
+.menu-container .steak-menu,
+.menu-container .dessert-menu {
+	min-width: 100%;
+	max-width: 100%;
+	height: auto;
+	border: solid goldenrod;
 }
