@@ -32,6 +32,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	margin-right: 85px;
+	margin-top: 4px;
 }
 
 .logo-container img {
@@ -45,7 +46,17 @@ header {
 h1 {
 	color: white;
 	font-size: 28px;
-	padding: 6px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin-top: 6px;
+	margin-left: 4px;
+}
+
+.logo-sub-text {
+	color: goldenrod;
+	font-size: 10px;
+	padding: 2px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	margin-left: 4px;
 }
 
 ul {
@@ -70,6 +81,7 @@ li a {
 	border-radius: 7px;
 	margin: 5px;
 	padding: 4px;
+	margin-top: 10px;
 }
 
 .hamburger {
@@ -81,6 +93,7 @@ li a {
 	cursor: pointer;
 	margin: 5px;
 	border-radius: 5px;
+	margin-top: 10px;
 }
 
 .menu {
@@ -204,4 +217,23 @@ li a {
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
+}
+
+footer {
+	background-color: rgb(60, 60, 60);
+	width: auto;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 30px;
+	color: white;
+}
+
+.img-footer-container img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
 }
