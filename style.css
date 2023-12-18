@@ -135,12 +135,11 @@ li a {
 ::-webkit-scrollbar {
 	display: none;
 }
-.featured-area{
-display: flex;
-flex-direction: row;
-width: 600px;
-height: 300px;
-
+.featured-area {
+	display: flex;
+	flex-direction: row;
+	width: 600px;
+	height: 300px;
 }
 
 #rec-food-container {
@@ -149,24 +148,22 @@ height: 300px;
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
-	
 }
-#description{
+#description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
-	}
+}
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
-#search-container{
-height: 100px;
-margin-left: 375px;
-margin-bottom: -115px;
+#search-container {
+	height: 100px;
+	margin-left: 375px;
+	margin-bottom: -115px;
 }
-
 
 .image {
 	min-width: 300px;
@@ -220,13 +217,12 @@ margin-bottom: -115px;
 	margin-top: 50px;
 	max-width: 602px;
 	padding: 1px;
-
 }
 
 .grid-image {
 	width: 300px;
 	height: 300px;
-	border: 2px solid rgb(255, 0, 0); 
+	border: 2px solid goldenrod;
 }
 
 .visually-hidden {
