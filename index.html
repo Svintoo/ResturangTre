@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<link rel="stylesheet" href="style.css" />
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -13,22 +14,31 @@
 			crossorigin="anonymous"
 		></script>
 
-    <title>TAVERNA</title>
-  </head>
+		<title>TAVERNA</title>
+	</head>
 
 	<main>
 		<header>
 			<section class="logo-container">
 				<img src="img/logoimg.png" alt="logo" />
-				<h1 class="logo">TAVERNA</h1>
+
+				<article>
+					<h1 class="logo-text">TAVERNA</h1>
+					<p class="logo-sub-text">BBQ & GRILL</p>
+				</article>
+
 			</section>
 
 			<div class="header-nav">
 				<nav>
 					<ul class="menu" id="menu">
 						<li>
+              <hr />
+              <a href="index.html">Home</a>
+            </li>
+						<li>
 							<hr />
-							<a href="#">Meny</a>
+							<a href="meny.html">Meny</a>
 						</li>
 						<li>
 							<hr />
@@ -53,7 +63,10 @@
 			</div>
 		</header>
 		<body>
+            <div class="featured-area">
+
 			<div id="rec-food-container">
+
 				<article id="row">
 					<a href="" class="featured-item">Food item 1</a>
 					<img src="/img/mat1.jpg" alt="" class="image" />
@@ -64,6 +77,8 @@
 					<script type="module" src="app.js"></script>
 				</article>
 			</div>
+            <div id="description"></div>
+        </div>
 
 			<div id="search-container">
 				<form action="post">
@@ -74,13 +89,34 @@
 			</div>
 
 			<div id="image-grid">
-				<img src="1.jpg" alt="Bild 1" class="grid-image" />
-				<img src="2.jpg" alt="Bild 2" class="grid-image" />
-				<img src="3.jpg" alt="Bild 3" class="grid-image" />
-				<img src="4.jpg" alt="Bild 4" class="grid-image" />
+				<img src="Taverna-Bar (1).jpg" alt="Bild på Tavernas bar" class="grid-image" />
+				<img src="beansbeansbeans.jpg" alt="Bild på en av Tavernas maträtter " class="grid-image" />
+				<img src="Taverna.png" alt="Bild på Tavernas inredning" class="grid-image" />
+				<img src="surfnturf.jpg" alt="Bild på maträtt" class="grid-image" />
 			</div>
 
 			<script type="module" src="db.js"></script>
 		</body>
+		<footer>
+			<article class="adress-container">
+				<p>Smedsuddsvägen 1,</p>
+				<p>Lännersta</p>
+				<p>08 - 715 00 45</p>
+			</article>
+			<section class="img-footer-container">
+				<img src="img/facebook.png" alt="facebook" />
+				<img src="img/instagram.png" alt="instagram" />
+			</section>
+			<section class="open-hours-container">
+				<h2>Öppettider</h2>
+				<p>Måndag: 17.00-23.00</p>
+				<p>Tisdag: 17.00-23.00</p>
+				<p>Onsdag: 17.00-23.00</p>
+				<p>Torsdag: 17.00-23.00</p>
+				<p>Fredag: 17.00-01.00</p>
+				<p>Lördag: 17.00-01.00</p>
+				<p>Söndag: Stängt</p>
+			</section>
+		</footer>
 	</main>
 </html>
