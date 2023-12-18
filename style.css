@@ -32,6 +32,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	margin-right: 85px;
+	margin-top: 4px;
 }
 
 .logo-container img {
@@ -45,7 +46,17 @@ header {
 h1 {
 	color: white;
 	font-size: 28px;
-	padding: 6px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin-top: 6px;
+	margin-left: 4px;
+}
+
+.logo-sub-text {
+	color: goldenrod;
+	font-size: 10px;
+	padding: 2px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	margin-left: 4px;
 }
 
 ul {
@@ -70,6 +81,7 @@ li a {
 	border-radius: 7px;
 	margin: 5px;
 	padding: 4px;
+	margin-top: 10px;
 }
 
 .hamburger {
@@ -81,6 +93,7 @@ li a {
 	cursor: pointer;
 	margin: 5px;
 	border-radius: 5px;
+	margin-top: 10px;
 }
 
 .menu {
@@ -122,20 +135,38 @@ li a {
 ::-webkit-scrollbar {
 	display: none;
 }
+.featured-area{
+display: flex;
+flex-direction: row;
+width: 600px;
+height: 300px;
+
+}
 
 #rec-food-container {
 	background-color: white;
 	height: 300px;
 	width: 300px;
-	border: 3px solid purple;
+	border: 3px solid goldenrod;
 	overflow: scroll;
-	margin-top: 3rem;
+
 }
+#description{
+	height: 300px;
+	width: 300px;
+	background-color: rgb(131, 131, 131);
+	}
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
+#search-container{
+height: 100px;
+margin-left: 375px;
+margin-bottom: -115px;
+}
+
 
 .image {
 	min-width: 300px;
@@ -186,13 +217,16 @@ li a {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-top: 20px;
+	margin-top: 50px;
+	max-width: 602px;
+	padding: 1px;
+
 }
 
 .grid-image {
-	width: 200px;
-	height: auto;
-	border: 2px solid purple;
+	width: 300px;
+	height: 300px;
+	border: 2px solid rgb(255, 0, 0);
 }
 
 .visually-hidden {
@@ -204,6 +238,44 @@ li a {
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
+}
+
+footer {
+	background-color: rgb(60, 60, 60);
+	width: auto;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 30px;
+	color: white;
+}
+
+.img-footer-container img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+footer {
+	background-color: rgb(60, 60, 60);
+	width: auto;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 30px;
+	color: white;
+}
+
+.img-footer-container img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
 }
 
 
