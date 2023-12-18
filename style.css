@@ -127,6 +127,27 @@ li a {
 	right: 3rem;
 }
 
+.table-number-container {
+	margin: 10px;
+}
+
+.search-container {
+	margin: 10px;
+}
+
+input {
+	padding: 2px;
+	margin: 2px;
+	border-radius: 5px;
+}
+.button {
+	padding: 3px;
+	background-color: rgb(57, 56, 56);
+	color: white;
+	border: 1px solid goldenrod;
+	border-radius: 5px;
+}
+
 .menu:target {
 	/* show menu */
 	transform: translateX(0);

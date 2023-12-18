@@ -57,7 +57,7 @@
 				</nav>
 			</div>
 		</header>
-		<body>
+		<body class="body-container">
 			<div id="rec-food-container">
 				<article id="row">
 					<a href="" class="featured-item">Food item 1</a>
@@ -70,10 +70,25 @@
 				</article>
 			</div>
 
+			<div class="table-number-container">
+				<input
+					type="number"
+					id="table-number"
+					placeholder="Ange bordets nummer"
+				/>
+				<button class="button" type="button" id="choose-table-btn">
+					Välj bord
+				</button>
+			</div>
+
 			<div id="search-container">
 				<form action="post">
-					<input type="text" id="txtField" placeholder="...." />
-					<input type="button" id="searchBtn" value="Search" />
+					<input
+						type="text"
+						id="txtField"
+						placeholder="Skriv in en maträtt/dryck"
+					/>
+					<input type="button" class="button" id="searchBtn" value="Sök" />
 					<div id="resultContainer"></div>
 				</form>
 			</div>
