@@ -154,9 +154,14 @@ border-radius: 5px;
 padding: 7px;
 }
 
-.productInfoHeader{
+.productInfo{
+  
+
+}
+.productDescH2{
   font-size: xx-large;
   color: white;
+  text-wrap:wrap;
 }
 .productInfoPrice{
   font-size: large;
@@ -186,4 +191,8 @@ padding: 7px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.addToCart{
+border-radius: 5px;
+
 }

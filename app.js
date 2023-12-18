@@ -22,19 +22,17 @@ const allItems = [
   ...db["our-foods"],
 ];
 let i = 1;
-
-
-
+let itemDesc = null;
 
 setInterval(function () {
-	slide(slider);
+  slide(slider);
 
-	i++;
+  i++;
 }, 3000);
 
-
-
-button.addEventListener("click", () => searchItem(item));
+button.addEventListener("click", () => {
+  searchItem(item);
+});
 
 function searchItem(item) {
   if (item.value !== "") {
@@ -49,9 +47,10 @@ function searchItem(item) {
         resultLink.textContent = result;
         resultLink.style.textDecoration = "none";
         resultLink.style.color = "white";
-        resultLink.addEventListener("click", () =>
-          itemDescription(allItems[p])
-        );
+        resultLink.addEventListener("click", () => {
+          itemDescription(allItems[p]);
+          removeItemDesc();
+        });
         resultContainer.appendChild(resultLink);
         resultContainer.appendChild(document.createElement("br"));
         found = true;
@@ -60,17 +59,20 @@ function searchItem(item) {
     if (!found) {
       document.getElementById("resultContainer").innerHTML =
         "Could not find item!";
+      console.error("could not find item");
     }
   } else {
     document.getElementById("resultContainer").innerHTML =
       "The field is empty!";
+    console.error("empty field");
   }
 }
 
 function itemDescription(item) {
+  removeItemDesc();
   console.log(item.dsc + " Clicked!");
 
-  let itemDesc = document.createElement("div");
+  itemDesc = document.createElement("div");
   itemDesc.className = "productInfo";
   itemDesc.style.height = "300px";
   itemDesc.style.width = "300px";
@@ -79,16 +81,21 @@ function itemDescription(item) {
   itemDesc.style.backgroundSize = "cover";
   document.body.appendChild(itemDesc);
 
-  let itemDescHeader = document.createElement("header");
-  itemDescHeader.className = "productInfoHeader";
-  itemDescHeader.innerHTML = item.dsc;
-  itemDesc.appendChild(itemDescHeader);
+  let itemDescH2 = document.createElement("h2");
+  itemDescH2.className = "productDescH2";
+  itemDescH2.innerHTML = item.dsc;
+  itemDesc.appendChild(itemDescH2);
 
   let itemDescPrice = document.createElement("p");
   itemDescPrice.className = "productInfoPrice";
   itemDescPrice.innerHTML = item.price;
   itemDescPrice.innerHTML += ":-SEK";
   itemDesc.appendChild(itemDescPrice);
+
+  let itemAddToCart = document.createElement("button");
+  itemAddToCart.innerHTML = "Add to cart";
+  itemAddToCart.className = "addToCart";
+  itemDesc.appendChild(itemAddToCart);
 }
 
 function slide(slider) {
@@ -99,12 +106,18 @@ function slide(slider) {
     i = 0;
   }
 
-	if (i <= 2) {
-		slider.scrollLeft += 300;
-		console.log(i);
-	} else {
-		slider.scrollLeft -= 600;
-		i = 0;
-		console.log("reset");
-	}
+  if (i <= 2) {
+    slider.scrollLeft += 300;
+    console.log(i);
+  } else {
+    slider.scrollLeft -= 600;
+    i = 0;
+    console.log("reset");
+  }
+}
+function removeItemDesc(itemDesc) {
+  if (itemDesc) {
+    body.removeChild(itemDesc);
+    itemDesc = null;
+  }
 }
