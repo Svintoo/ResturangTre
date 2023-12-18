@@ -135,12 +135,11 @@ li a {
 ::-webkit-scrollbar {
 	display: none;
 }
-.featured-area{
-display: flex;
-flex-direction: row;
-width: 600px;
-height: 300px;
-
+.featured-area {
+	display: flex;
+	flex-direction: row;
+	width: 600px;
+	height: 300px;
 }
 
 #rec-food-container {
@@ -151,22 +150,22 @@ height: 300px;
 	overflow: scroll;
 
 }
-#description{
+#description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
-	}
+}
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
-#search-container{
-height: 100px;
-margin-left: 375px;
-margin-bottom: -115px;
+#search-container {
+	height: 100px;
+	margin-left: 375px;
+	margin-bottom: -115px;
+	z-index: 5;
 }
-
 
 .image {
 	min-width: 300px;
@@ -204,13 +203,25 @@ margin-bottom: -115px;
 	padding: 7px;
 }
 
-.productInfoHeader {
+.productInfo {
+	position: absolute;
+}
+.productDescH2 {
 	font-size: xx-large;
 	color: white;
+	text-wrap: wrap;
 }
 .productInfoPrice {
 	font-size: large;
 	color: white;
+}
+#clickRemove {
+	position: fixed;
+	left: -300px;
+	top: -500px;
+	width: 2000px;
+	height: 2000px;
+	background-color: rgba(70, 144, 210, 0.579);
 }
 
 #image-grid {
@@ -220,13 +231,12 @@ margin-bottom: -115px;
 	margin-top: 50px;
 	max-width: 602px;
 	padding: 1px;
-
 }
 
 .grid-image {
 	width: 300px;
 	height: 300px;
-	border: 2px solid rgb(255, 0, 0);
+	border: 2px solid goldenrod;
 }
 
 .visually-hidden {
@@ -239,24 +249,8 @@ margin-bottom: -115px;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
-
-footer {
-	background-color: rgb(60, 60, 60);
-	width: auto;
-	margin-top: 15%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	line-height: 30px;
-	color: white;
-}
-
-.img-footer-container img {
-	width: 40px;
-	height: 40px;
+#addToCart {
 	border-radius: 5px;
-	margin: 5px;
 }
 
 footer {
