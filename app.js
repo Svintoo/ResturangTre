@@ -3,7 +3,36 @@ import db from "./db.js";
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
+let itemDesc = null;
+let toggleSearch = false;
+
+let currentTableNumber = null;
+const chooseTableBtn = document.getElementById("choose-table-btn");
+const tableNumberMessage = document.getElementById("table-number-message");
+
+chooseTableBtn.addEventListener("click", function () {
+  const tableNumberInput = document.getElementById("table-number");
+  const enteredTableNumber = tableNumberInput.value;
+
+  if (enteredTableNumber !== "") {
+    currentTableNumber = enteredTableNumber;
+
+    updateShoppingCartMessage();
+
+    tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
+    tableNumberMessage.style.display = "block";
+  } else {
+    tableNumberMessage.style.display = "none";
+  }
+});
+
+function updateShoppingCartMessage() {
+  const shoppingCartMessage = document.getElementById("shopping-cart-message");
+  shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
+}
+
 const nav = document.querySelector(".header-nav");
+
 const allItems = [
   ...db.bbqs,
   ...db["best-foods"],
@@ -22,25 +51,24 @@ const allItems = [
   ...db["our-foods"],
 ];
 let i = 1;
-let itemDesc = null;
-let toggleSearch = false;
-let toggleResult = false;
 
 setInterval(function () {
   slide(slider);
-
   i++;
 }, 3000);
 
 button.addEventListener("click", () => {
   searchItem(item);
+  console.log("bttn clicked!"); // DELETE
 });
 
 function searchItem(item) {
   toggleResultContainer();
   if (item.value !== "") {
     let found = false;
-    document.getElementById("resultContainer").innerHTML = "";
+    const resultContainer = document.getElementById("resultContainer");
+    resultContainer.innerHTML = "";
+
     for (let p = 0; p < allItems.length; p++) {
       if (allItems[p].id.includes(item.value) == true) {
         let result = allItems[p].dsc;
@@ -50,10 +78,12 @@ function searchItem(item) {
         resultLink.textContent = result;
         resultLink.style.textDecoration = "none";
         resultLink.style.color = "white";
+
         resultLink.addEventListener("click", () => {
           itemDescription(allItems[p]);
           toggleResultContainer();
         });
+
         resultContainer.appendChild(resultLink);
         resultContainer.appendChild(document.createElement("br"));
         found = true;
@@ -62,11 +92,13 @@ function searchItem(item) {
     if (!found) {
       document.getElementById("resultContainer").innerHTML =
         "Could not find item!";
+
       console.error("could not find item");
     }
   } else {
     document.getElementById("resultContainer").innerHTML =
       "The field is empty!";
+
     console.error("empty field");
   }
 }
@@ -82,7 +114,7 @@ function itemDescription(item) {
   });
   productScreen.appendChild(clickField);
 
-  itemDesc = document.createElement("div");
+  let itemDesc = document.createElement("div");
   itemDesc.className = "productInfo";
   itemDesc.id = "productId";
   itemDesc.style.height = "600px";
@@ -105,6 +137,7 @@ function itemDescription(item) {
 
   let itemAddToCart = document.createElement("button");
   itemAddToCart.innerHTML = "Add to cart";
+  itemAddToCart.className = "button";
   itemAddToCart.id = "addToCart";
   itemAddToCart.addEventListener("click", () => {
     alert("pressed!");
@@ -120,6 +153,7 @@ function slide(slider) {
     i = 0;
   }
 }
+
 function toggleResultContainer() {
   let resultContainer = document.getElementById("resultContainer");
   if (toggleSearch == false) {
@@ -135,9 +169,10 @@ function removeProductDesc() {
   let itemDesc = document.getElementById("productId");
   let removeField = document.getElementById("clickRemove");
   let productScreen = document.getElementById("image-grid");
-
-  productScreen.removeChild(itemDesc);
-  productScreen.removeChild(removeField);
-
-  console.log(toggleResult);
+  if (itemDesc && removeField && productScreen) {
+    productScreen.removeChild(itemDesc);
+    productScreen.removeChild(removeField);
+  } else {
+    console.error("one or more elements not found");
+  }
 }

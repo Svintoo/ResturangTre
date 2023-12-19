@@ -127,6 +127,48 @@ li a {
 	right: 3rem;
 }
 
+.table-number-container {
+	margin: 10px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.message-container {
+	padding: 10px;
+	margin: 10px;
+	background-color: #228025;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	display: none;
+}
+
+.search-container {
+	margin: 10px;
+}
+
+input {
+	padding: 2px;
+	margin: 2px;
+	border-radius: 5px;
+}
+.button {
+	padding: 3px;
+	background-color: rgb(57, 56, 56);
+	color: white;
+	border: 1px solid goldenrod;
+	border-radius: 5px;
+}
+
 .menu:target {
 	/* show menu */
 	transform: translateX(0);
@@ -135,12 +177,11 @@ li a {
 ::-webkit-scrollbar {
 	display: none;
 }
-.featured-area{
-display: flex;
-flex-direction: row;
-width: 600px;
-height: 300px;
-
+.featured-area {
+	display: flex;
+	flex-direction: row;
+	width: 600px;
+	height: 300px;
 }
 
 #rec-food-container {
@@ -149,25 +190,23 @@ height: 300px;
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
-	
+
 }
-#description{
+#description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
-	}
+}
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
-#search-container{
-height: 100px;
-margin-left: 375px;
-margin-bottom: -115px;
-z-index: 5;
+#search-container {
+	height: 100px;
+	margin-bottom: -100px;
+	z-index: 5;
 }
-
 
 .image {
 	min-width: 300px;
@@ -206,26 +245,45 @@ z-index: 5;
 }
 
 .productInfo{
-  position: absolute;
-
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	max-height:400px;
 }
 .productDescH2{
-  font-size: xx-large;
-  color: white;
-  text-wrap:wrap;
-}
-.productInfoPrice {
-	font-size: large;
+	font-size: xxx-large;
 	color: white;
+	text-wrap: wrap;
+	margin: 20px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
 }
-#clickRemove{
+.productInfoPrice{
+	font-size: x-large;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	color: rgb(255, 255, 255);
+	margin-left: 20px;
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: black;
+}
+#addToCart{
+width: 50px;
+align-self: end;
+margin-top: auto;
+margin-bottom: 20px;
+margin-right: 20px;
+border-radius: 5px;
+}
+
+
+#clickRemove {
 	position: fixed;
-    left: -300px;
+	left: -300px;
 	top: -500px;
 	width: 2000px;
 	height: 2000px;
 }
-
 #image-grid {
 	display: flex;
 	justify-content: space-around;
@@ -233,25 +291,71 @@ z-index: 5;
 	margin-top: 50px;
 	max-width: 602px;
 	padding: 1px;
-
 }
 
 .grid-image {
 	width: 300px;
 	height: 300px;
-	border: 2px solid rgb(255, 0, 0); 
+	border: 2px solid goldenrod;
 }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }
-#addToCart{
-border-radius: 5px;
+footer {
+	background-color: rgb(60, 60, 60);
+	width: auto;
+	margin-top: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 30px;
+	color: white;
+}
+
+.img-footer-container img {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+
+.menu-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	justify-content: space-around;
+}
+
+.menu-container article {
+	flex: 0 0 calc(50% - 20px);
+	color: white;
+	margin: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 20px;
+	background-color: grey;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.menu-container .drinks-menu,
+.menu-container .burgers-menu,
+.menu-container .BBQ-menu,
+.menu-container .sandwiches-menu,
+.menu-container .steak-menu,
+.menu-container .dessert-menu {
+	min-width: 100%;
+	max-width: 100%;
+	height: auto;
+	border: solid goldenrod;
 }
