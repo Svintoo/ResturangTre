@@ -117,6 +117,14 @@ function searchItem(item) {
 
 function itemDescription(item) {
 	console.log(item.dsc + " Clicked!");
+	let productScreen = document.getElementById("image-grid");
+
+  let clickField = document.createElement("div");
+  clickField.id = "clickRemove";
+  clickField.addEventListener("click", () => {
+    removeProductDesc();
+  });
+  productScreen.appendChild(clickField);
 
 	let itemDesc = document.createElement("div");
 	itemDesc.className = "productInfo";
