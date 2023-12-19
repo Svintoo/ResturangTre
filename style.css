@@ -151,7 +151,8 @@ li a {
 	margin: 10px;
 }
 
-input {
+.input {
+	width: 170px;
 	padding: 2px;
 	margin: 2px;
 	border-radius: 5px;
