@@ -5,6 +5,7 @@ const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
 let itemDesc = null;
 let toggleSearch = false;
+let toggleResult = false;
 
 let currentTableNumber = null;
 const chooseTableBtn = document.getElementById("choose-table-btn");
@@ -28,10 +29,6 @@ const allItems = [
 	...db["our-foods"],
 ];
 let i = 1;
-
-let itemDesc = null;
-let toggleSearch = false;
-let toggleResult = false;
 
 setInterval(function () {
 	slide(slider);
