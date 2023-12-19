@@ -3,6 +3,8 @@ import db from "./db.js";
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
+let itemDesc = null;
+let toggleSearch = false;
 
 let currentTableNumber = null;
 const chooseTableBtn = document.getElementById("choose-table-btn");
@@ -27,27 +29,23 @@ const allItems = [
 ];
 let i = 1;
 
-let itemDesc = null;
-let toggleSearch = false;
-let toggleResult = false;
-
 setInterval(function () {
 	slide(slider);
-	slide(slider);
-
 	i++;
 }, 3000);
 
-button.addEventListener("click", () => searchItem(item));
-
 button.addEventListener("click", () => {
 	searchItem(item);
+	console.log("bttn clicked!"); // DELETE
 });
 
 function searchItem(item) {
+	toggleResultContainer();
 	if (item.value !== "") {
 		let found = false;
-		document.getElementById("resultContainer").innerHTML = "";
+		const resultContainer = document.getElementById("resultContainer");
+		resultContainer.innerHTML = "";
+
 		for (let p = 0; p < allItems.length; p++) {
 			if (allItems[p].id.includes(item.value) == true) {
 				let result = allItems[p].dsc;
@@ -57,10 +55,6 @@ function searchItem(item) {
 				resultLink.textContent = result;
 				resultLink.style.textDecoration = "none";
 				resultLink.style.color = "white";
-
-				resultLink.addEventListener("click", () =>
-					itemDescription(allItems[p])
-				);
 
 				resultLink.addEventListener("click", () => {
 					itemDescription(allItems[p]);
@@ -88,22 +82,23 @@ function searchItem(item) {
 
 function itemDescription(item) {
 	console.log(item.dsc + " Clicked!");
+	let productScreen = document.getElementById("image-grid");
+
+	let clickField = document.createElement("div");
+	clickField.id = "clickRemove";
+	clickField.addEventListener("click", () => {
+		removeProductDesc();
+	});
+	productScreen.appendChild(clickField);
 
 	let itemDesc = document.createElement("div");
 	itemDesc.className = "productInfo";
-	itemDesc.style.height = "300px";
-	itemDesc.style.width = "300px";
+	itemDesc.id = "productId";
+	itemDesc.style.height = "600px";
+	itemDesc.style.width = "600px";
 	console.log(item.img);
 	itemDesc.style.backgroundImage = `url(${item.img})`;
 	itemDesc.style.backgroundSize = "cover";
-
-	document.body.appendChild(itemDesc);
-
-	let itemDescHeader = document.createElement("header");
-	itemDescHeader.className = "productInfoHeader";
-	itemDescHeader.innerHTML = item.dsc;
-	itemDesc.appendChild(itemDescHeader);
-
 	productScreen.appendChild(itemDesc);
 
 	let itemDescH2 = document.createElement("h2");
@@ -116,11 +111,10 @@ function itemDescription(item) {
 	itemDescPrice.innerHTML = item.price;
 	itemDescPrice.innerHTML += ":-SEK";
 	itemDesc.appendChild(itemDescPrice);
-}
 
-function slide(slider) {
 	let itemAddToCart = document.createElement("button");
 	itemAddToCart.innerHTML = "Add to cart";
+	itemAddToCart.className = "button";
 	itemAddToCart.id = "addToCart";
 	itemAddToCart.addEventListener("click", () => {
 		alert("pressed!");
@@ -189,15 +183,15 @@ function toggleResultContainer() {
 		toggleSearch = false;
 	}
 }
-
 function removeProductDesc() {
 	console.log("field clicked!");
 	let itemDesc = document.getElementById("productId");
 	let removeField = document.getElementById("clickRemove");
 	let productScreen = document.getElementById("image-grid");
-
-	productScreen.removeChild(itemDesc);
-	productScreen.removeChild(removeField);
-
-	console.log(toggleResult);
+	if (itemDesc && removeField && productScreen) {
+		productScreen.removeChild(itemDesc);
+		productScreen.removeChild(removeField);
+	} else {
+		console.error("one or more elements not found");
+	}
 }
