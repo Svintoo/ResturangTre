@@ -3,7 +3,35 @@ import db from "./db.js";
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
+
+let currentTableNumber = null;
+const chooseTableBtn = document.getElementById("choose-table-btn");
+const tableNumberMessage = document.getElementById("table-number-message");
+
+chooseTableBtn.addEventListener("click", function () {
+	const tableNumberInput = document.getElementById("table-number");
+	const enteredTableNumber = tableNumberInput.value;
+
+	if (enteredTableNumber !== "") {
+		currentTableNumber = enteredTableNumber;
+
+		updateShoppingCartMessage();
+
+		tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
+		tableNumberMessage.style.display = "block";
+	} else {
+		tableNumberMessage.style.display = "none";
+	}
+});
+
+function updateShoppingCartMessage() {
+	const shoppingCartMessage = document.getElementById("shopping-cart-message");
+	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
+}
+
+
 const nav = document.querySelector(".header-nav");
+
 const allItems = [
 	...db.bbqs,
 	...db["best-foods"],
@@ -22,9 +50,11 @@ const allItems = [
 	...db["our-foods"],
 ];
 let i = 1;
+
 let itemDesc = null;
 let toggleSearch = false;
 let toggleResult = false;
+
 
 setInterval(function () {
 	slide(slider);
@@ -33,9 +63,13 @@ setInterval(function () {
 	i++;
 }, 3000);
 
+
+button.addEventListener("click", () => searchItem(item));
+
 button.addEventListener("click", () => {
 	searchItem(item);
 });
+
 
 function searchItem(item) {
 	if (item.value !== "") {
@@ -50,10 +84,16 @@ function searchItem(item) {
 				resultLink.textContent = result;
 				resultLink.style.textDecoration = "none";
 				resultLink.style.color = "white";
+
+				resultLink.addEventListener("click", () =>
+					itemDescription(allItems[p])
+				);
+
 				resultLink.addEventListener("click", () => {
 					itemDescription(allItems[p]);
 					toggleResultContainer();
 				});
+
 				resultContainer.appendChild(resultLink);
 				resultContainer.appendChild(document.createElement("br"));
 				found = true;
@@ -62,12 +102,16 @@ function searchItem(item) {
 		if (!found) {
 			document.getElementById("resultContainer").innerHTML =
 				"Could not find item!";
+
 			console.error("could not find item");
+
 		}
 	} else {
 		document.getElementById("resultContainer").innerHTML =
 			"The field is empty!";
+
 		console.error("empty field");
+
 	}
 }
 
@@ -81,6 +125,14 @@ function itemDescription(item) {
 	console.log(item.img);
 	itemDesc.style.backgroundImage = `url(${item.img})`;
 	itemDesc.style.backgroundSize = "cover";
+
+	document.body.appendChild(itemDesc);
+
+	let itemDescHeader = document.createElement("header");
+	itemDescHeader.className = "productInfoHeader";
+	itemDescHeader.innerHTML = item.dsc;
+	itemDesc.appendChild(itemDescHeader);
+
 	productScreen.appendChild(itemDesc);
 
 	let itemDescH2 = document.createElement("h2");
@@ -88,11 +140,24 @@ function itemDescription(item) {
 	itemDescH2.innerHTML = item.dsc;
 	itemDesc.appendChild(itemDescH2);
 
+
 	let itemDescPrice = document.createElement("p");
 	itemDescPrice.className = "productInfoPrice";
 	itemDescPrice.innerHTML = item.price;
 	itemDescPrice.innerHTML += ":-SEK";
 	itemDesc.appendChild(itemDescPrice);
+
+}
+
+function slide(slider) {
+	if (i <= 2) {
+		slider.scrollLeft += 300;
+	} else {
+		slider.scrollLeft -= 600;
+		i = 0;
+	}
+
+
 
 	let itemAddToCart = document.createElement("button");
 	itemAddToCart.innerHTML = "Add to cart";
@@ -104,6 +169,7 @@ function itemDescription(item) {
 }
 
 function slide(slider) {
+
 	if (i <= 2) {
 		slider.scrollLeft += 300;
 	} else {

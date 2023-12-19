@@ -127,6 +127,48 @@ li a {
 	right: 3rem;
 }
 
+.table-number-container {
+	margin: 10px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.message-container {
+	padding: 10px;
+	margin: 10px;
+	background-color: #228025;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	display: none;
+}
+
+.search-container {
+	margin: 10px;
+}
+
+input {
+	padding: 2px;
+	margin: 2px;
+	border-radius: 5px;
+}
+.button {
+	padding: 3px;
+	background-color: rgb(57, 56, 56);
+	color: white;
+	border: 1px solid goldenrod;
+	border-radius: 5px;
+}
+
 .menu:target {
 	/* show menu */
 	transform: translateX(0);
