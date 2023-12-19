@@ -75,7 +75,7 @@ li a {
 }
 
 .shopping-btn {
-	background-color: grey;
+	background-color: rgba(128, 128, 128, 0);
 	height: 27px;
 	width: 25px;
 	border-radius: 7px;
@@ -88,7 +88,7 @@ li a {
 	position: fixed;
 	/* a large z-index puts the ham button above the rest of the page*/
 	z-index: 99;
-	background-color: grey;
+	background-color: rgba(128, 128, 128, 0);
 	border: none;
 	cursor: pointer;
 	margin: 5px;
@@ -273,6 +273,7 @@ align-self: end;
 margin-top: auto;
 margin-bottom: 20px;
 margin-right: 20px;
+border-radius: 5px;
 }
 
 
@@ -282,7 +283,6 @@ margin-right: 20px;
 	top: -500px;
 	width: 2000px;
 	height: 2000px;
-	
 }
 #image-grid {
 	display: flex;
@@ -309,10 +309,6 @@ margin-right: 20px;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
-#addToCart {
-	border-radius: 5px;
-}
-
 footer {
 	background-color: rgb(60, 60, 60);
 	width: auto;
