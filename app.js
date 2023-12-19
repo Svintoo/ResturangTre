@@ -137,6 +137,7 @@ function itemDescription(item) {
 
   let itemAddToCart = document.createElement("button");
   itemAddToCart.innerHTML = "Add to cart";
+  itemAddToCart.className = "button";
   itemAddToCart.id = "addToCart";
   itemAddToCart.addEventListener("click", () => {
     alert("pressed!");
