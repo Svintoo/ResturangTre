@@ -7,27 +7,6 @@ let currentTableNumber = null;
 const chooseTableBtn = document.getElementById("choose-table-btn");
 const tableNumberMessage = document.getElementById("table-number-message");
 
-chooseTableBtn.addEventListener("click", function () {
-	const tableNumberInput = document.getElementById("table-number");
-	const enteredTableNumber = tableNumberInput.value;
-
-	if (enteredTableNumber !== "") {
-		currentTableNumber = enteredTableNumber;
-
-		updateShoppingCartMessage();
-
-		tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
-		tableNumberMessage.style.display = "block";
-	} else {
-		tableNumberMessage.style.display = "none";
-	}
-});
-
-function updateShoppingCartMessage() {
-	const shoppingCartMessage = document.getElementById("shopping-cart-message");
-	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
-}
-
 const allItems = [
 	...db.bbqs,
 	...db["best-foods"],
@@ -126,4 +105,46 @@ function slide(slider) {
 		i = 0;
 		console.log("reset");
 	}
+}
+
+chooseTableBtn.addEventListener("click", function () {
+	const tableNumberInput = document.getElementById("table-number");
+	const enteredTableNumber = tableNumberInput.value;
+
+	if (enteredTableNumber !== "") {
+		currentTableNumber = enteredTableNumber;
+
+		if (
+			isValidTableNumber(enteredTableNumber) &&
+			!isTableTaken(enteredTableNumber)
+		) {
+			updateShoppingCartMessage();
+
+			tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
+			tableNumberMessage.style.display = "block";
+		} else {
+			if (!isValidTableNumber(enteredTableNumber)) {
+				tableNumberMessage.textContent =
+					"Du skrev in ett bordsnummer som inte finns.";
+				tableNumberMessage.style.display = "block";
+			} else {
+				tableNumberMessage.textContent = "Bordet är upptaget.";
+				tableNumberMessage.style.display = "block";
+			}
+		}
+	}
+});
+
+function isValidTableNumber(tableNumber) {
+	return tableNumber >= 1 && tableNumber <= 15;
+}
+
+function isTableTaken(tableNumber) {
+	const takenTables = [3, 7, 12];
+	return takenTables.includes(tableNumber);
+}
+
+function updateShoppingCartMessage() {
+	const shoppingCartMessage = document.getElementById("shopping-cart-message");
+	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
 }

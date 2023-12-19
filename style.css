@@ -156,11 +156,13 @@ li a {
 	margin: 10px;
 }
 
-input {
+.input {
+	width: 250px;
 	padding: 2px;
 	margin: 2px;
 	border-radius: 5px;
 }
+
 .button {
 	padding: 3px;
 	background-color: rgb(57, 56, 56);
