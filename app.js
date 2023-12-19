@@ -8,30 +8,6 @@ let currentTableNumber = null;
 const chooseTableBtn = document.getElementById("choose-table-btn");
 const tableNumberMessage = document.getElementById("table-number-message");
 
-chooseTableBtn.addEventListener("click", function () {
-	const tableNumberInput = document.getElementById("table-number");
-	const enteredTableNumber = tableNumberInput.value;
-
-	if (enteredTableNumber !== "") {
-		currentTableNumber = enteredTableNumber;
-
-		updateShoppingCartMessage();
-
-		tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
-		tableNumberMessage.style.display = "block";
-	} else {
-		tableNumberMessage.style.display = "none";
-	}
-});
-
-function updateShoppingCartMessage() {
-	const shoppingCartMessage = document.getElementById("shopping-cart-message");
-	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
-}
-
-
-const nav = document.querySelector(".header-nav");
-
 const allItems = [
 	...db.bbqs,
 	...db["best-foods"],
@@ -55,7 +31,6 @@ let itemDesc = null;
 let toggleSearch = false;
 let toggleResult = false;
 
-
 setInterval(function () {
 	slide(slider);
 	slide(slider);
@@ -63,13 +38,11 @@ setInterval(function () {
 	i++;
 }, 3000);
 
-
 button.addEventListener("click", () => searchItem(item));
 
 button.addEventListener("click", () => {
 	searchItem(item);
 });
-
 
 function searchItem(item) {
 	if (item.value !== "") {
@@ -104,14 +77,12 @@ function searchItem(item) {
 				"Could not find item!";
 
 			console.error("could not find item");
-
 		}
 	} else {
 		document.getElementById("resultContainer").innerHTML =
 			"The field is empty!";
 
 		console.error("empty field");
-
 	}
 }
 
@@ -119,12 +90,12 @@ function itemDescription(item) {
 	console.log(item.dsc + " Clicked!");
 	let productScreen = document.getElementById("image-grid");
 
-  let clickField = document.createElement("div");
-  clickField.id = "clickRemove";
-  clickField.addEventListener("click", () => {
-    removeProductDesc();
-  });
-  productScreen.appendChild(clickField);
+	let clickField = document.createElement("div");
+	clickField.id = "clickRemove";
+	clickField.addEventListener("click", () => {
+		removeProductDesc();
+	});
+	productScreen.appendChild(clickField);
 
 	let itemDesc = document.createElement("div");
 	itemDesc.className = "productInfo";
@@ -148,13 +119,11 @@ function itemDescription(item) {
 	itemDescH2.innerHTML = item.dsc;
 	itemDesc.appendChild(itemDescH2);
 
-
 	let itemDescPrice = document.createElement("p");
 	itemDescPrice.className = "productInfoPrice";
 	itemDescPrice.innerHTML = item.price;
 	itemDescPrice.innerHTML += ":-SEK";
 	itemDesc.appendChild(itemDescPrice);
-
 }
 
 function slide(slider) {
@@ -164,8 +133,6 @@ function slide(slider) {
 		slider.scrollLeft -= 600;
 		i = 0;
 	}
-
-
 
 	let itemAddToCart = document.createElement("button");
 	itemAddToCart.innerHTML = "Add to cart";
@@ -176,15 +143,27 @@ function slide(slider) {
 	itemDesc.appendChild(itemAddToCart);
 }
 
-function slide(slider) {
+chooseTableBtn.addEventListener("click", function () {
+	const tableNumberInput = document.getElementById("table-number");
+	const enteredTableNumber = tableNumberInput.value;
 
-	if (i <= 2) {
-		slider.scrollLeft += 300;
+	if (enteredTableNumber !== "") {
+		currentTableNumber = enteredTableNumber;
+
+		updateShoppingCartMessage();
+
+		tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
+		tableNumberMessage.style.display = "block";
 	} else {
-		slider.scrollLeft -= 600;
-		i = 0;
+		tableNumberMessage.style.display = "none";
 	}
+});
+
+function updateShoppingCartMessage() {
+	const shoppingCartMessage = document.getElementById("shopping-cart-message");
+	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
 }
+
 function toggleResultContainer() {
 	let resultContainer = document.getElementById("resultContainer");
 	if (toggleSearch == false) {
@@ -205,4 +184,38 @@ function removeProductDesc() {
 	productScreen.removeChild(removeField);
 
 	console.log(toggleResult);
+}
+
+// script.js
+let cartContent = [];
+
+function toggleCart() {
+	const cartMenu = document.getElementById("shopping-cart-menu");
+	cartMenu.classList.toggle("open");
+}
+
+function closeCart() {
+	const cartMenu = document.getElementById("shopping-cart-menu");
+	cartMenu.classList.remove("open");
+}
+
+function addToCart(productName, price) {
+	const item = {
+		name: productName,
+		price: price,
+	};
+
+	cartContent.push(item);
+	updateCartContent();
+}
+
+function updateCartContent() {
+	const cartContentElement = document.getElementById("shopping-cart-content");
+	cartContentElement.innerHTML = "";
+
+	cartContent.forEach((item) => {
+		const itemElement = document.createElement("div");
+		itemElement.innerHTML = `<p>${item.name} - $${item.price}</p>`;
+		cartContentElement.appendChild(itemElement);
+	});
 }
