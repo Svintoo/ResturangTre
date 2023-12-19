@@ -263,9 +263,8 @@ input {
 	top: -500px;
 	width: 2000px;
 	height: 2000px;
-	background-color: rgba(70, 144, 210, 0.579);
+	
 }
-
 #image-grid {
 	display: flex;
 	justify-content: space-around;
