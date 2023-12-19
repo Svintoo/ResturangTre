@@ -3,6 +3,8 @@ import db from "./db.js";
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
+let itemDesc = null;
+let toggleSearch = false;
 
 let currentTableNumber = null;
 const chooseTableBtn = document.getElementById("choose-table-btn");
