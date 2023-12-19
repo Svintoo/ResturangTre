@@ -8,8 +8,6 @@ let currentTableNumber = null;
 const chooseTableBtn = document.getElementById("choose-table-btn");
 const tableNumberMessage = document.getElementById("table-number-message");
 
-const nav = document.querySelector(".header-nav");
-
 const allItems = [
 	...db.bbqs,
 	...db["best-foods"],
@@ -121,23 +119,6 @@ function itemDescription(item) {
 }
 
 function slide(slider) {
-	if (i <= 2) {
-		slider.scrollLeft += 300;
-	} else {
-		slider.scrollLeft -= 600;
-		i = 0;
-	}
-
-	let itemAddToCart = document.createElement("button");
-	itemAddToCart.innerHTML = "Add to cart";
-	itemAddToCart.id = "addToCart";
-	itemAddToCart.addEventListener("click", () => {
-		alert("pressed!");
-	});
-	itemDesc.appendChild(itemAddToCart);
-}
-
-function slide(slider) {
 	let itemAddToCart = document.createElement("button");
 	itemAddToCart.innerHTML = "Add to cart";
 	itemAddToCart.id = "addToCart";
@@ -196,17 +177,19 @@ function isTableTaken(tableNumber) {
 function updateShoppingCartMessage() {
 	const shoppingCartMessage = document.getElementById("shopping-cart-message");
 	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
-	function toggleResultContainer() {
-		let resultContainer = document.getElementById("resultContainer");
-		if (toggleSearch == false) {
-			resultContainer.classList.remove("visually-hidden");
-			toggleSearch = true;
-		} else {
-			resultContainer.classList.add("visually-hidden");
-			toggleSearch = false;
-		}
+}
+
+function toggleResultContainer() {
+	let resultContainer = document.getElementById("resultContainer");
+	if (toggleSearch == false) {
+		resultContainer.classList.remove("visually-hidden");
+		toggleSearch = true;
+	} else {
+		resultContainer.classList.add("visually-hidden");
+		toggleSearch = false;
 	}
 }
+
 function removeProductDesc() {
 	console.log("field clicked!");
 	let itemDesc = document.getElementById("productId");
