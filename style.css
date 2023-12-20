@@ -75,7 +75,6 @@ li a {
 }
 
 .shopping-btn {
-
 	background-color: rgba(120, 120, 120, 0.37);
 
 	height: 27px;
@@ -243,16 +242,15 @@ li a {
 	padding: 7px;
 }
 
-.productInfo{
+.productInfo {
 	position: absolute;
 	display: flex;
 	flex-direction: column;
 	max-width: 400px;
 	max-height: 400px;
-
 }
-.productDescH2{
-	font-size: xxx-large;
+.productDescH2 {
+	font-size: xx-large;
 	color: white;
 	text-wrap: wrap;
 	margin: 20px;
@@ -260,15 +258,13 @@ li a {
 	-webkit-text-stroke-color: black;
 }
 
-
-.productInfoPrice{
+.productInfoPrice {
 	font-size: x-large;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: rgb(255, 255, 255);
 	margin-left: 20px;
 	-webkit-text-stroke-width: 0.5px;
 	-webkit-text-stroke-color: black;
-
 }
 #addToCart {
 	width: 50px;
