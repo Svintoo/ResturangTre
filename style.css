@@ -75,7 +75,7 @@ li a {
 }
 
 .shopping-btn {
-	background-color: grey;
+	background-color: rgba(128, 128, 128, 0);
 	height: 27px;
 	width: 25px;
 	border-radius: 7px;
@@ -120,7 +120,7 @@ li a {
 .hamburger {
 	position: fixed;
 	z-index: 99;
-	background-color: grey;
+	background-color: rgba(128, 128, 128, 0);
 	border: none;
 	cursor: pointer;
 	margin: 5px;
@@ -294,12 +294,15 @@ input {
 	-webkit-text-stroke-width: 0.5px;
 	-webkit-text-stroke-color: black;
 }
-#addToCart {
-	width: 50px;
-	align-self: end;
-	margin-top: auto;
-	margin-bottom: 20px;
-	margin-right: 20px;
+
+#addToCart{
+width: 50px;
+align-self: end;
+margin-top: auto;
+margin-bottom: 20px;
+margin-right: 20px;
+border-radius: 5px;
+>>>>>>> main
 }
 
 #clickRemove {
@@ -334,10 +337,6 @@ input {
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
-#addToCart {
-	border-radius: 5px;
-}
-
 footer {
 	background-color: rgb(60, 60, 60);
 	width: auto;
