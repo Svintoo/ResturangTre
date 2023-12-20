@@ -192,6 +192,6 @@ function removeProductDesc() {
 		productScreen.removeChild(removeField);
 	} else {
 		console.error("one or more elements not found");
-	}
+	}};
 
 

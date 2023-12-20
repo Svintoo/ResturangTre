@@ -260,10 +260,7 @@ li a {
 	-webkit-text-stroke-color: black;
 }
 
-.productInfoPrice {
-	font-size: x-large;
-	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-=======
+
 .productInfoPrice{
 	font-size: x-large;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
