@@ -154,23 +154,23 @@ function addToCart(item) {
 	let found = false;
 	for (let i = 0; i < shoppingCart.length; i++) {
 		if (item.id === shoppingCart[i].id) {
-			shoppingCart[i].antal += 1;
+			shoppingCart[i].amount += 1;
 			found = true;
 			break;
 		}
 	}
 	if (found === false) {
-		let shoppingCartItem = {id: item.id, antal: 1};
+		let shoppingCartItem = {id: item.id, amount: 1, price: getItemPropertiesById(item.id).price, name: getItemPropertiesById(item.id).name};
 		shoppingCart.push(shoppingCartItem);
 	}
-
+	populateCart();
 	console.log(shoppingCart);
 }
 
 function toggleCart() {
 	let cartContainer = document.getElementById("cart-container");
 	if (cartContainer.style.display === "none") {
-		cartContainer.style.display = "flex";
+		cartContainer.style.display = "block";
 	}
 	else {
 		cartContainer.style.display = "none";
@@ -180,6 +180,29 @@ function toggleCart() {
 
 let toggleCartIcon = document.getElementById("cart-icon");
 toggleCartIcon.addEventListener("click", () => { toggleCart() });
+
+function getItemPropertiesById(id) {
+	for (let p = 0; p < allItems.length; p++) {
+      if (allItems[p].id === id) {
+		return allItems[p];
+		break;
+      }
+    }
+}
+
+//TODO lägg till en variabel för totalsumma och addera till den i for-loopen
+function populateCart() {
+	let cartContents = document.getElementById("cart-contents");
+	let cartItems = document.createElement("ul");
+	for (let i = 0; i < shoppingCart.length; i++) {
+		let cartItem = document.createElement("li");
+		cartItem.innerHTML = shoppingCart[i].amount + "st. " + shoppingCart[i].name + " " +  shoppingCart[i].price * shoppingCart[i].amount;
+		cartItems.appendChild(cartItem);
+	}
+	console.log(cartItems);
+	cartContents.innerHTML = "";
+	cartContents.appendChild(cartItems);
+}
 
 function slide(slider) {
   if (i <= 2) {

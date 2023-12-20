@@ -404,3 +404,8 @@ footer {
 	height: auto;
 	border: solid goldenrod;
 }
+
+
+.cart-container ul {
+	display: block;
+}
