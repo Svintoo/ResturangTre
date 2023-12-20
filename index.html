@@ -54,14 +54,8 @@
 					<section class="btn-container">
 						<i
 							class="fa-solid fa-basket-shopping shopping-btn shopping-cart"
-							onclick="toggleCart()"
+							id="cart-icon"
 						></i>
-						<div id="shopping-cart-menu" class="cart-menu">
-							<div id="shopping-cart-content">
-								<!-- <p id="shopping-cart-message" class="visually-hidden"></p> -->
-							</div>
-							<button type="button" onclick="closeCart()">Close Cart</button>
-						</div>
 
 						<a class="hamburger" href="#menu"
 							><span class="material-icons">menu</span></a
@@ -110,7 +104,6 @@
 					<div id="resultContainer"></div>
 				</form>
 			</div>
-
 			<div id="image-grid">
 				<img
 					src="img/Taverna-Bar (1).jpg"
@@ -129,7 +122,13 @@
 				/>
 				<img src="img/surfnturf.jpg" alt="Bild på maträtt" class="grid-image" />
 			</div>
-
+			<section class="cart-container" id="cart-container" style="display: none;">
+				<h2>Din kundvagn</h2>
+				<ul>
+					<li>Vald rätt</li>
+				</ul>
+				<button id="order-btn">Skicka beställning</button>
+			</section>
 			<script type="module" src="db.js"></script>
 		</body>
 		<footer>

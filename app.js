@@ -167,6 +167,20 @@ function addToCart(item) {
 	console.log(shoppingCart);
 }
 
+function toggleCart() {
+	let cartContainer = document.getElementById("cart-container");
+	if (cartContainer.style.display === "none") {
+		cartContainer.style.display = "flex";
+	}
+	else {
+		cartContainer.style.display = "none";
+	}
+	console.log("Nu kör vi!");
+}
+
+let toggleCartIcon = document.getElementById("cart-icon");
+toggleCartIcon.addEventListener("click", () => { toggleCart() });
+
 function slide(slider) {
   if (i <= 2) {
     slider.scrollLeft += 300;

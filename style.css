@@ -363,6 +363,24 @@ footer {
 	justify-content: space-around;
 }
 
+.cart-container {
+	position: absolute;
+	top: 54px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid goldenrod;
+	width: 20rem;
+	height: 30rem;
+	background: white;
+	z-index: 500;
+}
+
+
+
+
+
+
 .menu-container article {
 	flex: 0 0 calc(50% - 20px);
 	color: white;
