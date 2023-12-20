@@ -75,7 +75,9 @@ li a {
 }
 
 .shopping-btn {
-	background-color: rgba(128, 128, 128, 0);
+
+	background-color: rgba(120, 120, 120, 0.37);
+
 	height: 27px;
 	width: 25px;
 	border-radius: 7px;
@@ -86,9 +88,10 @@ li a {
 
 .hamburger {
 	position: fixed;
-	/* a large z-index puts the ham button above the rest of the page*/
 	z-index: 99;
-	background-color: rgba(128, 128, 128, 0);
+
+	background-color: rgba(120, 120, 120, 0.37);
+
 	border: none;
 	cursor: pointer;
 	margin: 5px;
@@ -98,8 +101,6 @@ li a {
 
 .menu {
 	position: fixed;
-	/* give the menu a larger z-index than the ham link
-	to put the menu above it */
 	z-index: 100;
 	top: 0;
 	left: 0;
@@ -108,12 +109,10 @@ li a {
 	width: 100%;
 	height: 70vh;
 	border-radius: 10px;
-	/* basic menu styling*/
 	list-style: none;
 	background-color: rgb(86, 85, 85);
 	display: flex;
 	flex-direction: column;
-	/* animate slide up/down */
 	transform: translateX(-100%);
 	transition: transform 0.2s ease;
 }
@@ -123,8 +122,8 @@ li a {
 	border: none;
 	color: white;
 	cursor: pointer;
-	top: 1.3rem;
-	right: 3rem;
+	top: 0.7rem;
+	right: 7rem;
 }
 
 .table-number-container {
@@ -156,7 +155,8 @@ li a {
 	margin: 10px;
 }
 
-input {
+.input {
+	width: 170px;
 	padding: 2px;
 	margin: 2px;
 	border-radius: 5px;
@@ -190,7 +190,6 @@ input {
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
-
 }
 #description {
 	height: 300px;
@@ -249,7 +248,8 @@ input {
 	display: flex;
 	flex-direction: column;
 	max-width: 400px;
-	max-height:400px;
+	max-height: 400px;
+
 }
 .productDescH2{
 	font-size: xxx-large;
@@ -259,6 +259,11 @@ input {
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: black;
 }
+
+.productInfoPrice {
+	font-size: x-large;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+=======
 .productInfoPrice{
 	font-size: x-large;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -266,16 +271,16 @@ input {
 	margin-left: 20px;
 	-webkit-text-stroke-width: 0.5px;
 	-webkit-text-stroke-color: black;
-}
-#addToCart{
-width: 50px;
-align-self: end;
-margin-top: auto;
-margin-bottom: 20px;
-margin-right: 20px;
-border-radius: 5px;
-}
 
+}
+#addToCart {
+	width: 50px;
+	align-self: end;
+	margin-top: auto;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	border-radius: 5px;
+}
 
 #clickRemove {
 	position: fixed;
@@ -327,7 +332,6 @@ footer {
 	border-radius: 5px;
 	margin: 5px;
 }
-
 
 .menu-container {
 	display: flex;
