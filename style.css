@@ -252,7 +252,7 @@ li a {
 
 }
 .productDescH2{
-	font-size: xxx-large;
+	font-size: xx-large;
 	color: white;
 	text-wrap: wrap;
 	margin: 20px;
@@ -329,7 +329,7 @@ footer {
 	border-radius: 5px;
 	margin: 5px;
 }
-
+/* menu page styling */
 .menu-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -359,4 +359,34 @@ footer {
 	max-width: 100%;
 	height: auto;
 	border: solid goldenrod;
+}
+
+/* order confirmation page styling */
+.confirmation {
+		height: 100vh;
+		margin: 10px;
+		box-sizing: border-box;
+		text-align: center;
+		padding: 20px;
+		border-radius: 10px;
+		overflow: hidden;
+
+}
+.confirmation .order {
+	background-color: grey;
+	border-radius: 10px;
+	padding: 20px;
+	border: solid goldenrod;
+}
+.startsida-btn{
+	background-color: goldenrod;
+	padding: 10px;
+	margin: 25px;
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+}
+.startsida-btn a {
+	color: white;
+	text-decoration: none;
 }
