@@ -10,21 +10,12 @@ const chooseTableBtn = document.getElementById("choose-table-btn");
 const tableNumberMessage = document.getElementById("table-number-message");
 
 const allItems = [
-  ...db.bbqs,
-  ...db["best-foods"],
-  ...db.breads,
-  ...db.burgers,
-  ...db.chocolates,
-  ...db.desserts,
-  ...db.drinks,
-  ...db["fried-chicken"],
-  ...db["ice-cream"],
-  ...db.pizzas,
-  ...db.porks,
-  ...db.sandwiches,
-  ...db.sausages,
-  ...db.steaks,
-  ...db["our-foods"],
+	...db.bbqs,
+	...db.burgers,
+	...db.desserts,
+	...db.drinks,
+	...db.sandwiches,
+	...db.steaks,
 ];
 let i = 1;
 
@@ -173,14 +164,14 @@ function updateShoppingCartMessage() {
 }
 
 function toggleResultContainer() {
-  let resultContainer = document.getElementById("resultContainer");
-  if (toggleSearch == false) {
-    resultContainer.classList.remove("visually-hidden");
-    toggleSearch = true;
-  } else {
-    resultContainer.classList.add("visually-hidden");
-    toggleSearch = false;
-  }
+	let resultContainer = document.getElementById("resultContainer");
+	if (toggleSearch == false) {
+		resultContainer.classList.remove("visually-hidden");
+		toggleSearch = true;
+	} else {
+		resultContainer.classList.add("visually-hidden");
+		toggleSearch = false;
+	}
 }
 function removeProductDesc() {
 	console.log("field clicked!");
@@ -192,6 +183,5 @@ function removeProductDesc() {
 		productScreen.removeChild(removeField);
 	} else {
 		console.error("one or more elements not found");
-	}};
-
-
+	}
+}
