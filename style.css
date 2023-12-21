@@ -209,12 +209,16 @@ li a {
 ::-webkit-scrollbar {
 	display: none;
 }
-.featured-area {
+
+/* removed styling for .featured-area so that the food-container is centered */
+/* .featured-area {
 	display: flex;
 	flex-direction: row;
 	width: 600px;
 	height: 300px;
-}
+	justify-content: space-evenly;
+
+} */
 
 #rec-food-container {
 	background-color: white;
@@ -222,12 +226,16 @@ li a {
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
+	margin: 15px;
+
+
+
 }
-#description {
+/* #description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
-}
+} */
 #row {
 	display: flex;
 	flex-direction: row;
