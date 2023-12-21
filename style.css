@@ -85,6 +85,39 @@ li a {
 	margin-top: 10px;
 }
 
+.shopping-cart {
+	cursor: pointer;
+}
+
+.cart-menu {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 70vh;
+	border-radius: 10px;
+	list-style: none;
+	background-color: rgb(86, 85, 85);
+	display: flex;
+	flex-direction: column;
+	transform: translateX(-100%);
+	transition: transform 0.2s ease;
+}
+
+.cart-menu.open {
+	transform: translateX(0);
+}
+
+.product {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+
 .hamburger {
 	position: fixed;
 	z-index: 99;
@@ -178,12 +211,15 @@ li a {
 	display: none;
 }
 
-.featured-area {
+/* removed styling for .featured-area so that the food-container is centered */
+/* .featured-area {
 	display: flex;
 	flex-direction: row;
 	width: 600px;
 	height: 300px;
-}
+	justify-content: space-evenly;
+
+} */
 
 #rec-food-container {
 	background-color: white;
@@ -191,13 +227,22 @@ li a {
 	width: 300px;
 	border: 3px solid goldenrod;
 	overflow: scroll;
+	margin: 15px;
 }
+
 
 #description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
 }
+
+
+/* #description {
+	height: 300px;
+	width: 300px;
+	background-color: rgb(131, 131, 131);
+} */
 
 #row {
 	display: flex;
@@ -258,7 +303,6 @@ li a {
 	max-width: 400px;
 	max-height: 400px;
 }
-
 .productDescH2 {
 	font-size: xx-large;
 	color: white;
@@ -284,6 +328,7 @@ li a {
 	margin-bottom: 20px;
 	margin-right: 20px;
 	border-radius: 5px;
+
 }
 
 #clickRemove {
@@ -340,6 +385,7 @@ footer {
 }
 
 /* menu page styling */
+
 .menu-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -347,6 +393,19 @@ footer {
 	justify-content: space-around;
 }
 
+.cart-container {
+	position: absolute;
+	top: 54px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid goldenrod;
+	width: 20rem;
+	height: 30rem;
+	background-color: rgb(86, 85, 85);
+	color: white;
+	z-index: 500;
+}
 .menu-container article {
 	flex: 0 0 calc(50% - 20px);
 	color: white;
@@ -371,6 +430,29 @@ footer {
 	border: solid goldenrod;
 }
 
+.cart-container ul {
+	display: block;
+}
+
+.cart-container ul li{
+	padding-bottom: 5px;
+}
+
+.cart-header {
+	padding: 10px;
+}
+
+.button-container
+{
+	position: absolute;
+	bottom: 0;
+}
+
+#order-btn {
+	margin: 10px;
+	margin-bottom: 10px;
+	position: relative;
+}
 /* order confirmation page styling */
 .confirmation {
 	height: 100vh;
@@ -403,6 +485,7 @@ footer {
 	text-decoration: none;
 }
 
+
 .about {
 	max-width: 800px;
 	margin: 20px auto;
@@ -425,3 +508,4 @@ footer {
 	display: block;
 	margin: 0 auto;
 }
+
