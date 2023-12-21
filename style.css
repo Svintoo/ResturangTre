@@ -75,7 +75,8 @@ li a {
 }
 
 .shopping-btn {
-	background-color: rgba(128, 128, 128, 0);
+	background-color: rgba(120, 120, 120, 0.37);
+
 	height: 27px;
 	width: 25px;
 	border-radius: 7px;
@@ -120,7 +121,9 @@ li a {
 .hamburger {
 	position: fixed;
 	z-index: 99;
-	background-color: rgba(128, 128, 128, 0);
+
+	background-color: rgba(120, 120, 120, 0.37);
+
 	border: none;
 	cursor: pointer;
 	margin: 5px;
@@ -151,8 +154,8 @@ li a {
 	border: none;
 	color: white;
 	cursor: pointer;
-	top: 1.3rem;
-	right: 3rem;
+	top: 0.7rem;
+	right: 7rem;
 }
 
 .table-number-container {
@@ -184,7 +187,8 @@ li a {
 	margin: 10px;
 }
 
-input {
+.input {
+	width: 170px;
 	padding: 2px;
 	margin: 2px;
 	border-radius: 5px;
@@ -232,7 +236,7 @@ input {
 #search-container {
 	height: 100px;
 	margin-bottom: -100px;
-	z-index: 5;
+	z-index: 1;
 }
 
 .image {
@@ -243,8 +247,9 @@ input {
 }
 .featured-item {
 	position: absolute;
-	color: black;
-	font-size: 30px;
+	color: white;
+	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	font-size: 20px;
 	font-weight: bold;
 	text-decoration: none;
 	z-index: 1;
@@ -286,6 +291,7 @@ input {
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: black;
 }
+
 .productInfoPrice {
 	font-size: x-large;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -295,14 +301,14 @@ input {
 	-webkit-text-stroke-color: black;
 }
 
-#addToCart{
-width: 50px;
-align-self: end;
-margin-top: auto;
-margin-bottom: 20px;
-margin-right: 20px;
-border-radius: 5px;
->>>>>>> main
+#addToCart {
+	width: 50px;
+	align-self: end;
+	margin-top: auto;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	border-radius: 5px;
+
 }
 
 #clickRemove {
@@ -355,6 +361,7 @@ footer {
 	border-radius: 5px;
 	margin: 5px;
 }
+/* menu page styling */
 
 .menu-container {
 	display: flex;
@@ -376,12 +383,6 @@ footer {
 	color: white;
 	z-index: 500;
 }
-
-
-
-
-
-
 .menu-container article {
 	flex: 0 0 calc(50% - 20px);
 	color: white;
@@ -406,7 +407,6 @@ footer {
 	border: solid goldenrod;
 }
 
-
 .cart-container ul {
 	display: block;
 }
@@ -430,3 +430,32 @@ footer {
 	margin-bottom: 10px;
 	position: relative;
 }
+/* order confirmation page styling */
+.confirmation {
+	height: 100vh;
+	margin: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.confirmation .order {
+	background-color: grey;
+	border-radius: 10px;
+	padding: 20px;
+	border: solid goldenrod;
+}
+.startsida-btn {
+	background-color: goldenrod;
+	padding: 10px;
+	margin: 25px;
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+}
+.startsida-btn a {
+	color: white;
+	text-decoration: none;
+}
+
