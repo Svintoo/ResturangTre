@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Resturangen</title>
 		<link rel="stylesheet" href="style.css" />
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -40,7 +39,7 @@
 						</li>
 						<li>
 							<hr />
-							<a href="#">Om oss</a>
+							<a href="omoss.html">Om oss</a>
 						</li>
 						<li>
 							<hr />
@@ -69,12 +68,28 @@
 			<div class="featured-area">
 				<div id="rec-food-container">
 					<article id="row">
-						<a href="" class="featured-item">Food item 1</a>
-						<img src="/img/mat1.jpg" alt="" class="image" />
-						<a href="" class="featured-item item-2">Food item 2</a>
-						<img src="/img/mat2.jpg" alt="" class="image" />
-						<a href="" class="featured-item item-3">Food item 3</a>
-						<img src="/img/mat3.jpg" alt="" class="image" />
+						<a href="" class="featured-item"
+							>BBQ pulled pork trash can <br>nachos</a
+						>
+						<img
+							src="https://goldbelly.imgix.net/uploads/showcase_media_asset/image/115312/guys-bbq-pulled-pork-trash-can-nachos.5783c0f7459bfc0adbbcf063edced3fb.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1"
+							alt="bbq pulled pork"
+							class="image"
+						/>
+						<a href="" class="featured-item item-2"
+							>Sea salted caramel swirl Cheesecake</a
+						>
+						<img
+							src="https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134006/sea-salted-caramel-swirl-cheesecake.e2825335433fb7a272a5d77649a6849e.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1"
+							alt="sea salted caramel cheesecake"
+							class="image"
+						/>
+						<a href="" class="featured-item item-3">Guys Caliente Margarita</a>
+						<img
+							src="https://goldbelly.imgix.net/uploads/showcase_media_asset/image/126836/guys-caliente-margaritas-for-12.ca8c6bc06b8f1039549385ffcebc749d.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1"
+							alt="margarita"
+							class="image"
+						/>
 						<script type="module" src="app.js"></script>
 					</article>
 				</div>
@@ -84,6 +99,9 @@
 			<div class="table-number-container">
 				<input
 					type="number"
+					min="1"
+					max="15"
+					class="input"
 					id="table-number"
 					placeholder="Ange bordets nummer"
 				/>
@@ -97,6 +115,7 @@
 				<form action="post">
 					<input
 						type="text"
+						class="input"
 						id="txtField"
 						placeholder="Skriv in en maträtt/dryck"
 					/>
