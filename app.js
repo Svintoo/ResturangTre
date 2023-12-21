@@ -170,7 +170,7 @@ function addToCart(item) {
 function toggleCart() {
 	let cartContainer = document.getElementById("cart-container");
 	if (cartContainer.style.display === "none") {
-		cartContainer.style.display = "block";
+		cartContainer.style.display = "flex";
 	}
 	else {
 		cartContainer.style.display = "none";
