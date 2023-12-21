@@ -212,8 +212,7 @@ li a {
 }
 
 /* removed styling for .featured-area so that the food-container is centered */
-/* 
-.featured-area {
+/* .featured-area {
 	display: flex;
 	flex-direction: row;
 	width: 600px;
@@ -232,8 +231,8 @@ li a {
 	margin: 15px;
 }
 
-/* 
-#description {
+
+/* #description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
