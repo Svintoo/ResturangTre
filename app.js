@@ -252,8 +252,5 @@ let orderButton = document.getElementById("order-btn");
 // All funktionalitet för shopping-cart
 orderButton.addEventListener("click", sendOrder);
 
-function sendOrder() {
-	alert("Sending order!");
-}
 
 
