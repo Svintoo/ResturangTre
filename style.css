@@ -384,10 +384,11 @@ footer {
 	flex-wrap: wrap;
 	flex-direction: column;
 	align-items: center;
-	border: 1px solid goldenrod;
+	border: 2px solid goldenrod;
 	width: 20rem;
 	height: 30rem;
-	background: white;
+	background-color: rgb(86, 85, 85);
+	color: white;
 	z-index: 500;
 }
 .menu-container article {
@@ -416,6 +417,26 @@ footer {
 
 .cart-container ul {
 	display: block;
+}
+
+.cart-container ul li{
+	padding-bottom: 5px;
+}
+
+.cart-header {
+	padding: 10px;
+}
+
+.button-container
+{
+	position: absolute;
+	bottom: 0;
+}
+
+#order-btn {
+	margin: 10px;
+	margin-bottom: 10px;
+	position: relative;
 }
 /* order confirmation page styling */
 .confirmation {
