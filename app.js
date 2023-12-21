@@ -74,47 +74,46 @@ function searchItem(item) {
 }
 
 function itemDescription(item) {
+	console.log(item.dsc + " Clicked!");
+	let productScreen = document.getElementById("image-grid");
 
-  console.log(item.dsc + " Clicked!");
-  let productScreen = document.getElementById("image-grid");
+	let clickField = document.createElement("div");
+	clickField.id = "clickRemove";
+	clickField.addEventListener("click", () => {
+		removeProductDesc();
+	});
+	productScreen.appendChild(clickField);
 
-  let clickField = document.createElement("div");
-  clickField.id = "clickRemove";
-  clickField.addEventListener("click", () => {
-    removeProductDesc();
-  });
-  productScreen.appendChild(clickField);
+	let itemDesc = document.createElement("div");
+	itemDesc.className = "productInfo";
+	itemDesc.id = "productId";
+	itemDesc.style.height = "600px";
+	itemDesc.style.width = "600px";
+	console.log(item.img);
+	itemDesc.style.backgroundImage = `url(${item.img})`;
+	itemDesc.style.backgroundSize = "cover";
+	productScreen.appendChild(itemDesc);
 
-  let itemDesc = document.createElement("div");
-  itemDesc.className = "productInfo";
-  itemDesc.id = "productId";
-  itemDesc.style.height = "600px";
-  itemDesc.style.width = "600px";
-  console.log(item.img);
-  itemDesc.style.backgroundImage = `url(${item.img})`;
-  itemDesc.style.backgroundSize = "cover";
-  productScreen.appendChild(itemDesc);
+	let itemDescH2 = document.createElement("h2");
+	itemDescH2.className = "productDescH2";
+	itemDescH2.innerHTML = item.dsc;
+	itemDesc.appendChild(itemDescH2);
 
-  let itemDescH2 = document.createElement("h2");
-  itemDescH2.className = "productDescH2";
-  itemDescH2.innerHTML = item.dsc;
-  itemDesc.appendChild(itemDescH2);
-
-  let itemDescPrice = document.createElement("p");
-  itemDescPrice.className = "productInfoPrice";
-  itemDescPrice.innerHTML = item.price;
-  itemDescPrice.innerHTML += ":-SEK";
-  itemDesc.appendChild(itemDescPrice);
-  // Add to cart button
-  let itemAddToCart = document.createElement("button");
-  itemAddToCart.innerHTML = "Add to cart";
-  itemAddToCart.className = "button";
-  itemAddToCart.id = "addToCart";
-  itemAddToCart.addEventListener("click", () => {
-// Adds item to cart
-	addToCart(item);
-  });
-  itemDesc.appendChild(itemAddToCart);
+	let itemDescPrice = document.createElement("p");
+	itemDescPrice.className = "productInfoPrice";
+	itemDescPrice.innerHTML = item.price;
+	itemDescPrice.innerHTML += ":-SEK";
+	itemDesc.appendChild(itemDescPrice);
+	// Add to cart button
+	let itemAddToCart = document.createElement("button");
+	itemAddToCart.innerHTML = "Add to cart";
+	itemAddToCart.className = "button";
+	itemAddToCart.id = "addToCart";
+	itemAddToCart.addEventListener("click", () => {
+		// Adds item to cart
+		addToCart(item);
+	});
+	itemDesc.appendChild(itemAddToCart);
 }
 
 // cart
@@ -128,7 +127,12 @@ function addToCart(item) {
 		}
 	}
 	if (found === false) {
-		let shoppingCartItem = {id: item.id, amount: 1, price: getItemPropertiesById(item.id).price, name: getItemPropertiesById(item.id).name};
+		let shoppingCartItem = {
+			id: item.id,
+			amount: 1,
+			price: getItemPropertiesById(item.id).price,
+			name: getItemPropertiesById(item.id).name,
+		};
 		shoppingCart.push(shoppingCartItem);
 	}
 	populateCart();
@@ -139,23 +143,24 @@ function toggleCart() {
 	let cartContainer = document.getElementById("cart-container");
 	if (cartContainer.style.display === "none") {
 		cartContainer.style.display = "flex";
-	}
-	else {
+	} else {
 		cartContainer.style.display = "none";
 	}
 	console.log("Nu kör vi!");
 }
 
 let toggleCartIcon = document.getElementById("cart-icon");
-toggleCartIcon.addEventListener("click", () => { toggleCart() });
+toggleCartIcon.addEventListener("click", () => {
+	toggleCart();
+});
 
 function getItemPropertiesById(id) {
 	for (let p = 0; p < allItems.length; p++) {
-      if (allItems[p].id === id) {
-		return allItems[p];
-		break;
-      }
-    }
+		if (allItems[p].id === id) {
+			return allItems[p];
+			break;
+		}
+	}
 }
 
 //TODO lägg till en variabel för totalsumma och addera till den i for-loopen
@@ -164,7 +169,12 @@ function populateCart() {
 	let cartItems = document.createElement("ul");
 	for (let i = 0; i < shoppingCart.length; i++) {
 		let cartItem = document.createElement("li");
-		cartItem.innerHTML = shoppingCart[i].amount + "st. " + shoppingCart[i].name + " " +  shoppingCart[i].price * shoppingCart[i].amount;
+		cartItem.innerHTML =
+			shoppingCart[i].amount +
+			"st. " +
+			shoppingCart[i].name +
+			" " +
+			shoppingCart[i].price * shoppingCart[i].amount;
 		cartItems.appendChild(cartItem);
 	}
 	console.log(cartItems);
@@ -192,8 +202,6 @@ chooseTableBtn.addEventListener("click", function () {
 			isValidTableNumber(enteredTableNumber) &&
 			!isTableTaken(enteredTableNumber)
 		) {
-			updateShoppingCartMessage();
-
 			tableNumberMessage.textContent = `Ditt bordsnummer är ${currentTableNumber}`;
 			tableNumberMessage.style.display = "block";
 		} else {
@@ -216,11 +224,6 @@ function isValidTableNumber(tableNumber) {
 function isTableTaken(tableNumber) {
 	const takenTables = [3, 7, 12];
 	return takenTables.includes(tableNumber);
-}
-
-function updateShoppingCartMessage() {
-	const shoppingCartMessage = document.getElementById("shopping-cart-message");
-	shoppingCartMessage.textContent = `Bord: ${currentTableNumber}`;
 }
 
 function toggleResultContainer() {
@@ -248,9 +251,3 @@ function removeProductDesc() {
 
 // Alla variabler relaterat till shopping-cart
 let orderButton = document.getElementById("order-btn");
-
-// All funktionalitet för shopping-cart
-orderButton.addEventListener("click", sendOrder);
-
-
-
