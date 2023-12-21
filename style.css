@@ -193,6 +193,7 @@ li a {
 	margin: 2px;
 	border-radius: 5px;
 }
+
 .button {
 	padding: 3px;
 	background-color: rgb(57, 56, 56);
@@ -227,20 +228,28 @@ li a {
 	border: 3px solid goldenrod;
 	overflow: scroll;
 	margin: 15px;
-
-
-
 }
+
+
+#description {
+	height: 300px;
+	width: 300px;
+	background-color: rgb(131, 131, 131);
+}
+
+
 /* #description {
 	height: 300px;
 	width: 300px;
 	background-color: rgb(131, 131, 131);
 } */
+
 #row {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 }
+
 #search-container {
 	height: 100px;
 	margin-bottom: -100px;
@@ -253,6 +262,7 @@ li a {
 	max-width: 300px;
 	max-height: 300px;
 }
+
 .featured-item {
 	position: absolute;
 	color: white;
@@ -265,9 +275,11 @@ li a {
 	left: 30px;
 	width: 100%;
 }
+
 .item-2 {
 	left: 330px;
 }
+
 .item-3 {
 	left: 630px;
 }
@@ -326,6 +338,7 @@ li a {
 	width: 2000px;
 	height: 2000px;
 }
+
 #image-grid {
 	display: flex;
 	justify-content: space-around;
@@ -351,6 +364,7 @@ li a {
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+
 footer {
 	background-color: rgb(60, 60, 60);
 	width: auto;
@@ -369,6 +383,7 @@ footer {
 	border-radius: 5px;
 	margin: 5px;
 }
+
 /* menu page styling */
 
 .menu-container {
@@ -448,12 +463,14 @@ footer {
 	border-radius: 10px;
 	overflow: hidden;
 }
+
 .confirmation .order {
 	background-color: grey;
 	border-radius: 10px;
 	padding: 20px;
 	border: solid goldenrod;
 }
+
 .startsida-btn {
 	background-color: goldenrod;
 	padding: 10px;
@@ -462,8 +479,33 @@ footer {
 	color: white;
 	text-decoration: none;
 }
+
 .startsida-btn a {
 	color: white;
 	text-decoration: none;
+}
+
+
+.about {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #3c3c3c;
+	box-shadow: 0 0 20px rgb(114, 100, 100);
+	text-align: center;
+}
+
+.about h2 {
+	color: #ffffff;
+	font-size: 14px;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+
+.responsive-image {
+	max-width: 90%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
 }
 
