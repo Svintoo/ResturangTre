@@ -1,5 +1,8 @@
 import db from "./db.js";
 
+// En array för att lägga in objekt i varukorgen
+let shoppingCart = [];
+
 const slider = document.getElementById("rec-food-container");
 const button = document.getElementById("searchBtn");
 const item = document.getElementById("txtField");
@@ -71,45 +74,102 @@ function searchItem(item) {
 }
 
 function itemDescription(item) {
-	console.log(item.dsc + " Clicked!");
-	let productScreen = document.getElementById("image-grid");
 
-	let clickField = document.createElement("div");
-	clickField.id = "clickRemove";
-	clickField.addEventListener("click", () => {
-		removeProductDesc();
-	});
-	productScreen.appendChild(clickField);
+  console.log(item.dsc + " Clicked!");
+  let productScreen = document.getElementById("image-grid");
 
-	let itemDesc = document.createElement("div");
-	itemDesc.className = "productInfo";
-	itemDesc.id = "productId";
-	itemDesc.style.height = "600px";
-	itemDesc.style.width = "600px";
-	console.log(item.img);
-	itemDesc.style.backgroundImage = `url(${item.img})`;
-	itemDesc.style.backgroundSize = "cover";
-	productScreen.appendChild(itemDesc);
+  let clickField = document.createElement("div");
+  clickField.id = "clickRemove";
+  clickField.addEventListener("click", () => {
+    removeProductDesc();
+  });
+  productScreen.appendChild(clickField);
 
-	let itemDescH2 = document.createElement("h2");
-	itemDescH2.className = "productDescH2";
-	itemDescH2.innerHTML = item.dsc;
-	itemDesc.appendChild(itemDescH2);
+  let itemDesc = document.createElement("div");
+  itemDesc.className = "productInfo";
+  itemDesc.id = "productId";
+  itemDesc.style.height = "600px";
+  itemDesc.style.width = "600px";
+  console.log(item.img);
+  itemDesc.style.backgroundImage = `url(${item.img})`;
+  itemDesc.style.backgroundSize = "cover";
+  productScreen.appendChild(itemDesc);
 
-	let itemDescPrice = document.createElement("p");
-	itemDescPrice.className = "productInfoPrice";
-	itemDescPrice.innerHTML = item.price;
-	itemDescPrice.innerHTML += ":-SEK";
-	itemDesc.appendChild(itemDescPrice);
+  let itemDescH2 = document.createElement("h2");
+  itemDescH2.className = "productDescH2";
+  itemDescH2.innerHTML = item.dsc;
+  itemDesc.appendChild(itemDescH2);
 
-	let itemAddToCart = document.createElement("button");
-	itemAddToCart.innerHTML = "Add to cart";
-	itemAddToCart.className = "button";
-	itemAddToCart.id = "addToCart";
-	itemAddToCart.addEventListener("click", () => {
-		alert("pressed!");
-	});
-	itemDesc.appendChild(itemAddToCart);
+  let itemDescPrice = document.createElement("p");
+  itemDescPrice.className = "productInfoPrice";
+  itemDescPrice.innerHTML = item.price;
+  itemDescPrice.innerHTML += ":-SEK";
+  itemDesc.appendChild(itemDescPrice);
+  // Add to cart button
+  let itemAddToCart = document.createElement("button");
+  itemAddToCart.innerHTML = "Add to cart";
+  itemAddToCart.className = "button";
+  itemAddToCart.id = "addToCart";
+  itemAddToCart.addEventListener("click", () => {
+// Adds item to cart
+	addToCart(item);
+  });
+  itemDesc.appendChild(itemAddToCart);
+}
+
+// cart
+function addToCart(item) {
+	let found = false;
+	for (let i = 0; i < shoppingCart.length; i++) {
+		if (item.id === shoppingCart[i].id) {
+			shoppingCart[i].amount += 1;
+			found = true;
+			break;
+		}
+	}
+	if (found === false) {
+		let shoppingCartItem = {id: item.id, amount: 1, price: getItemPropertiesById(item.id).price, name: getItemPropertiesById(item.id).name};
+		shoppingCart.push(shoppingCartItem);
+	}
+	populateCart();
+	console.log(shoppingCart);
+}
+
+function toggleCart() {
+	let cartContainer = document.getElementById("cart-container");
+	if (cartContainer.style.display === "none") {
+		cartContainer.style.display = "block";
+	}
+	else {
+		cartContainer.style.display = "none";
+	}
+	console.log("Nu kör vi!");
+}
+
+let toggleCartIcon = document.getElementById("cart-icon");
+toggleCartIcon.addEventListener("click", () => { toggleCart() });
+
+function getItemPropertiesById(id) {
+	for (let p = 0; p < allItems.length; p++) {
+      if (allItems[p].id === id) {
+		return allItems[p];
+		break;
+      }
+    }
+}
+
+//TODO lägg till en variabel för totalsumma och addera till den i for-loopen
+function populateCart() {
+	let cartContents = document.getElementById("cart-contents");
+	let cartItems = document.createElement("ul");
+	for (let i = 0; i < shoppingCart.length; i++) {
+		let cartItem = document.createElement("li");
+		cartItem.innerHTML = shoppingCart[i].amount + "st. " + shoppingCart[i].name + " " +  shoppingCart[i].price * shoppingCart[i].amount;
+		cartItems.appendChild(cartItem);
+	}
+	console.log(cartItems);
+	cartContents.innerHTML = "";
+	cartContents.appendChild(cartItems);
 }
 
 function slide(slider) {
@@ -185,3 +245,15 @@ function removeProductDesc() {
 		console.error("one or more elements not found");
 	}
 }
+
+// Alla variabler relaterat till shopping-cart
+let orderButton = document.getElementById("order-btn");
+
+// All funktionalitet för shopping-cart
+orderButton.addEventListener("click", sendOrder);
+
+function sendOrder() {
+	alert("Sending order!");
+}
+
+
